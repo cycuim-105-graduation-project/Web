@@ -1,0 +1,18 @@
+# config/application.yml
+defaults: &defaults
+  sendgrid:
+    username: johndoe
+    password: abcdefg1234
+    address: smtp.sendgrid.net
+
+development:
+  <<: *defaults
+  domain: localhost
+
+test:
+  <<: *defaults
+  domain: localhost
+
+production:
+  <<: *defaults
+  domain: localhost
