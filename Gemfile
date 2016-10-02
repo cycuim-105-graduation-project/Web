@@ -26,6 +26,8 @@ gem 'awesome_print'
 gem 'simple_form'
 gem 'meta-tags'
 gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth'
 gem 'settingslogic'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'

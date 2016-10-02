@@ -2,7 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable, :omniauthable
+  include DeviseTokenAuth::Concerns::User
 
   # Send confirmable email asynchronously
   def send_devise_notification(notification, *args)
