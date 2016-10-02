@@ -14,10 +14,21 @@ ActiveRecord::Schema.define(version: 20161001064832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "identity",               default: "", null: false
+    t.string   "nickname"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "cellphone"
+    t.string   "zipcode"
+    t.string   "address"
+    t.string   "company"
+    t.string   "company_address"
+    t.string   "job_title"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

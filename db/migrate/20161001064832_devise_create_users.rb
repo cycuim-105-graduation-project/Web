@@ -1,9 +1,22 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
-    create_table :users do |t|
+    enable_extension 'uuid-ossp'
+    
+    create_table :users, id: :uuid do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+
+      t.string :identity,           null: false, default: ""
+      t.string :nickname
+      t.string :firstname
+      t.string :lastname
+      t.string :cellphone
+      t.string :zipcode
+      t.string :address
+      t.string :company
+      t.string :company_address
+      t.string :job_title
 
       ## Recoverable
       t.string   :reset_password_token
