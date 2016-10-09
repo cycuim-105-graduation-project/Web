@@ -52,7 +52,6 @@ class User < ApplicationRecord
 
   validates :email,    presence: true, uniqueness: { case_sensitive: false }
   validates :identity, presence: true, uniqueness: { case_sensitive: false }
-  validates :uid,      presence: true, uniqueness: { case_sensitive: false }
 
   # Send confirmable email asynchronously
   def send_devise_notification(notification, *args)
