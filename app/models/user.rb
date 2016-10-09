@@ -50,6 +50,10 @@ class User < ApplicationRecord
          :confirmable, :omniauthable
   include DeviseTokenAuth::Concerns::User
 
+  validates :email,    presence: true, uniqueness: { case_sensitive: false }
+  validates :identity, presence: true, uniqueness: { case_sensitive: false }
+  validates :uid,      presence: true, uniqueness: { case_sensitive: false }
+
   # Send confirmable email asynchronously
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
