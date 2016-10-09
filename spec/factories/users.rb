@@ -43,7 +43,11 @@
 #
 
 FactoryGirl.define do
+  password = Faker::Internet.password(6)
   factory :user do
-    
+    email                 { Faker::Internet.email }
+    identity              { Faker::Internet.user_name }
+    password              { password }
+    password_confirmation { password }
   end
 end
