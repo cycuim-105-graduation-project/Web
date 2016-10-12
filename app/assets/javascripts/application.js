@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require material-kit/bootstrap.min
+//= require material-kit/material.min
+//= require material-kit/nouislider.min
+//= require material-kit/bootstrap-datepicker
+//= require material-kit/jquery.dropdown
+//= require material-kit/jquery.tagsinput
+//= require material-kit/jasny-bootstrap.min
+//= require material-kit/material-kit
+//= require_tree ./front

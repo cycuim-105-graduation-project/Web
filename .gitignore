@@ -23,3 +23,7 @@
 # Ignore sensitive configuration settings
 /config/application.yml
 /config/database.yml
+
+# Ignore Material-Kit assets
+/vendor/assets/javascripts/material-kit/*
+/vendor/assets/stylesheets/material-kit/*
