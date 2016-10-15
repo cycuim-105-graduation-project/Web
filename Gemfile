@@ -36,9 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
@@ -61,7 +58,13 @@ group :development do
   # Supporting gem for Rails Panel
   gem 'meta_request'
   gem 'bullet'
-  gem 'rack-mini-profiler', github: 'MiniProfiler/rack-mini-profiler'
+  gem 'rack-mini-profiler', git: 'https://github.com/MiniProfiler/rack-mini-profiler.git'
+  gem 'highline'
+  # Use Capistrano for deployment
+  gem 'capistrano-rbenv',   require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
