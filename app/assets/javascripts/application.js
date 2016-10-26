@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//  require turbolinks
 //= require material-kit/bootstrap.min
 //= require material-kit/material.min
 //= require material-kit/nouislider.min
