@@ -27,3 +27,7 @@
 # Ignore Material-Kit assets
 /vendor/assets/javascripts/material-kit/*
 /vendor/assets/stylesheets/material-kit/*
+
+# Ignore application configuration
+/config/application.yml
+/config/settings.yml
