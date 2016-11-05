@@ -1,9 +1,10 @@
-# config/application.yml
+# Add configuration values here, as shown below.
 defaults: &defaults
-  sendgrid:
-    username: johndoe
-    password: abcdefg1234
-    address: smtp.sendgrid.net
+  SENDGRID_USERNAME: johndoe
+  SENDGRID_PASSWORD: abc123456
+  SENDGRID_ADDRESS: smtp.sendgrid.net
+  GOOGLE_CLIENT_ID: 65765249609740cf934000902e76774e.apps.googleusercontent.com
+  GOOGLE_CLIENT_SECRET: 64be8904877043b6ad42e568ee578318
 
 development:
   <<: *defaults
