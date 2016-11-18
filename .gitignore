@@ -31,3 +31,4 @@
 # Ignore application configuration
 /config/application.yml
 /config/settings.yml
+/config/google_credentials.json
