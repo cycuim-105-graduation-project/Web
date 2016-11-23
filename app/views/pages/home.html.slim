@@ -1,0 +1,246 @@
+= provide :body_class, 'home-page'
+
+nav.navbar.navbar-primary.navbar-transparent.navbar-absolute
+  .container
+    .navbar-header
+      button.navbar-toggle[type="button" data-toggle="collapse" data-target="#navigation-example"]
+        span.sr-only
+          | Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand[href="../home"]
+        | Be  connect , Beacon My Friends !
+    #navigation-example.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a[href="../activities"]
+            i.material-icons
+              | apps
+            |  探索活動
+        li.dropdown
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            i.material-icons
+              | person
+            |  會員管理
+            b.caret
+          ul.dropdown-menu.dropdown-with-icons
+            li
+              a[href="../membership_index.html"]
+                i.material-icons
+                  | description
+                |  會員資料修改
+            li
+              a[href="../business_card_own.html"]
+                i.material-icons
+                  | assignment_ind
+                |  個人名片
+            li
+              a[href="../business_card_friend.html"]
+                i.material-icons
+                  | contact_mail
+                |  名片查詢
+            li
+              a[href="../voting_record.html"]
+                i.material-icons
+                  | assignment
+                |  投票紀錄
+            li
+              a[href="../message_record.html"]
+                i.material-icons
+                  | insert_comment
+                |  歷史訊息
+            li
+              a[href="../ticket_inquiring.html"]
+                i.material-icons
+                  | search
+                |  票券查詢
+            li
+              a[href="../contacts.html"]
+                i.material-icons
+                  | phone
+                |  線上諮詢
+        li.dropdown
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            i.material-icons
+              | supervisor_account
+            |  廠商管理
+            b.caret
+          ul.dropdown-menu.dropdown-with-icons
+            li
+              a[href="../users/sign_in"]
+                i.material-icons
+                  | description
+                |  資料更新
+            li
+              a[href="../users/sign_in"]
+                i.material-icons
+                  | textsms
+                |  推播訊息管理
+            li
+              a[href="../users/sign_in"]
+                i.material-icons
+                  | perm_identity
+                |  名片查詢
+        li.dropdown
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            i.material-icons
+              | supervisor_account
+            | 大會管理
+            b.caret
+          ul.dropdown-menu.dropdown-with-icons
+            li
+              a[href="../users/sign_in"]
+                i.material-icons
+                  | wc
+                |  活動管理
+            li
+              a[href="../users/sign_in"]
+                i.material-icons
+                  | textsms
+                |  訊息管理
+            li
+              a[href="../users/sign_in"]
+                i.material-icons
+                  | assignment
+                |  投票管理
+
+        li
+          a.btn.btn-white.btn-simple[href="../about" ]
+            i.material-icons
+              | account_balance
+            |  關於我們
+html lang="en"
+  head
+    meta charset="utf-8" /
+    link href="../assets/img/apple-icon.png" rel="apple-touch-icon" sizes="76x76" /
+    link href="../assets/img/favicon.png" rel="icon" type="image/png" /
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /
+    title Blog Posts Page - Material Kit PRO by Creative Tim
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /
+    /! Fonts and icons
+    link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" rel="stylesheet" type="text/css" /
+    link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet" /
+    /! CSS Files
+    link href="../assets/css/bootstrap.min.css" rel="stylesheet" /
+    link href="../assets/css/material-kit.css" rel="stylesheet" /
+  body.blog-posts
+    .page-header.header-filter.header-small data-parallax="active" style="background-image: url('#{ image_url('bg10.jpg') }');"
+      .container
+        .row
+          .col-md-8.col-md-offset-2.text-center
+            h2.title
+              | Welcome to Be Connect World ! Enjoy your adventute !
+    .main.main-raised
+      .container
+        .section
+          .row
+            .col-md-6.col-md-offset-3.text-center
+              ul.nav.nav-pills.nav-pills-primary
+                li.
+                  a  href="../activities"
+                li
+                  a  href="../activities"
+                li.active.text-center
+                  a  href="../activities" 活動總覽
+                li
+                  a  href="../activities"
+                li
+                  a  href="../activities"
+              .tab-content.tab-space
+                #pill1.tab-pane.active
+                #pill2.tab-pane
+                #pill3.tab-pane
+                #pill4.tab-pane
+          .row
+            .col-md-6
+              .card.card-raised.card-background style=("background-image: url('../assets/img/examples/office2.jpg')")
+                .content
+                  h6.category.text-info Worlds
+                  a href="#pablo"
+                  h3.card-title The Best Productivity Apps on Market
+                  p.card-description
+                    | Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                  a.btn.btn-danger.btn-round href="../apply"
+                    i.material-icons format_align_left
+                    | Read Article
+            .col-md-6
+              .card.card-raised.card-background style=("background-image: url('../assets/img/examples/blog8.jpg')")
+                .content
+                  h6.category.text-info Business
+                  h3.card-title Working on Wallstreet is Not So Easy
+                  p.card-description
+                    | Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                  a.btn.btn-primary.btn-round href="../apply""
+                    i.material-icons format_align_left
+                    | Read Article
+            .col-md-6
+              .card.card-raised.card-background style=("background-image: url('../assets/img/examples/card-project6.jpg')")
+                .content
+                  h6.category.text-info Marketing
+                  h3.card-title 0 to 100.000 Customers in 6 months
+                  p.card-description
+                    | Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                  a.btn.btn-warning.btn-round href="../apply""
+                    i.material-icons subject
+                    | Read Case Study
+            .col-md-6
+              .card.card-raised.card-background style=("background-image: url('../assets/img/examples/card-project6.jpg')")
+                .content
+                  h6.category.text-info Marketing
+                  h3.card-title 0 to 100.000 Customers in 6 months
+                  p.card-description
+                    | Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                  a.btn.btn-warning.btn-round href="../apply""
+                    i.material-icons subject
+                    | Read Case Study
+
+
+
+    footer.footer
+      .container
+        a.footer-brand href="#pablo"  Material Kit PRO
+        ul.pull-center
+          li
+            a href="#pablo"
+              | Blog
+          li
+            a href="#pablo"
+              | Presentation
+          li
+            a href="#pablo"
+              | Discover
+          li
+            a href="#pablo"
+              | Payment
+          li
+            a href="#pablo"
+              | Contact Us
+        ul.social-buttons.pull-right
+          li
+            a.btn.btn-just-icon.btn-twitter.btn-simple href="https://twitter.com/CreativeTim" target="_blank"
+              i.fa.fa-twitter
+          li
+            a.btn.btn-just-icon.btn-facebook.btn-simple href="https://www.facebook.com/CreativeTim" target="_blank"
+              i.fa.fa-facebook-square
+          li
+            a.btn.btn-just-icon.btn-google.btn-simple href="https://www.instagram.com/CreativeTimOfficial" target="_blank"
+              i.fa.fa-google
+  /! Core JS Files
+  script src="../assets/js/jquery.min.js" type="text/javascript"
+  script src="../assets/js/bootstrap.min.js" type="text/javascript"
+  script src="../assets/js/material.min.js"
+  /! Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/
+  script src="../assets/js/nouislider.min.js" type="text/javascript"
+  /! Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/
+  script src="../assets/js/bootstrap-datepicker.js" type="text/javascript"
+  /! Plugin for Select Form control, full documentation here: https://github.com/FezVrasta/dropdown.js
+  script src="../assets/js/jquery.dropdown.js" type="text/javascript"
+  /! Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/
+  script src="../assets/js/jquery.tagsinput.js"
+  /! Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput
+  script src="../assets/js/jasny-bootstrap.min.js"
+  /! Plugin For Google Maps
+  script src="https://maps.googleapis.com/maps/api/js?v=3.exp" type="text/javascript"
+  /! Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc
+  script src="../assets/js/material-kit.js" type="text/javascript"

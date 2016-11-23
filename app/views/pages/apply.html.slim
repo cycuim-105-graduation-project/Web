@@ -1,0 +1,342 @@
+| <!doctype html
+html lang="en"
+  head
+    meta charset="utf-8" /
+    link href="assets/img/apple-icon.png" rel="apple-touch-icon" sizes="76x76" /
+    link href="assets/img/favicon.png" rel="icon" type="image/png" /
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /
+    title Sections - Material Kit PRO by Creative Tim
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /
+    /! Fonts and icons
+    link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" rel="stylesheet" type="text/css" /
+    link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet" /
+    /! CSS Files
+    link href="assets/css/bootstrap.min.css" rel="stylesheet" /
+    link href="assets/css/material-kit.css" rel="stylesheet" /
+    /! CSS Just for demo purpose, don't include it in your project
+    link href="assets/assets-for-demo/vertical-nav.css" rel="stylesheet" /
+  body.section-white
+    nav#sectionsNav.navbar.navbar-primary.navbar-fixed-top
+      .container
+        /! Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle data-target="#navigation-example" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href="../home"  Be connect,Beacon my friends!
+        #navigation-example.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a href="../activities"
+                i.material-icons apps
+                | 活動總覽
+            li#headerNavigationItems.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                i.material-icons person
+                | 會員管理
+                b.caret
+              ul.dropdown-menu.dropdown-with-icons
+                li
+                  a href="#headers"
+                    i.material-icons description
+                    | 會員資料修改
+                li
+                  a href="#features"
+                    i.material-icons assignment_ind
+                    | 個人名片
+                li
+                  a href="#blogs"
+                    i.material-icons contact_mail
+                    | 收到的名片
+                li
+                  a href="#teams"
+                    i.material-icons assignment
+                    | 投票紀錄
+                li
+                  a href="#projects"
+                    i.material-icons insert_comment
+                    | 歷史訊息
+                li
+                  a href="#pricing"
+                    i.material-icons search
+                    | 票券查詢
+                li
+                  a href="#testimonials"
+                    i.material-icons feedback
+                    | 訊息通知
+                li
+                  a href="#contactus"
+                    i.material-icons chat
+                    | 留言板
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                i.material-icons supervisor_account
+                | 廠商管理
+                b.caret
+              ul.dropdown-menu.dropdown-with-icons
+                li
+                  a href="examples/about-us.html"
+                    i.material-icons description
+                    | 資料更新
+                li
+                  a href="examples/blog-post.html"
+                    i.material-icons textsms
+                    | 推播訊息管理
+                li
+                  a href="examples/blog-posts.html"
+                    i.material-icons perm_identity
+                    | 名片查詢
+
+            li
+               a.btn.btn-white.btn-simple[href="../about" ]
+                i.material-icons account_balance
+                | 關於我們
+.page-header.header-small data-parallax="active" filter-color="rose" style="background-image: url('#{ image_url('bg6.jpg') }');"
+.section.section-gray
+  .container
+    .main.main-raised.main-product
+      .row
+        .col-md-6.col-sm-6
+          .tab-content
+              = image_tag 'product1.jpg', :size => "500x500" 
+        .col-md-6.col-sm-6
+          h2.title Becky Silk Blazer
+          h3.main-price $335
+          #acordeon
+            #accordion.panel-group
+              .panel.panel-border.panel-default
+                #headingOne.panel-heading role="tab"
+                  a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button"
+                  h4.panel-title
+                    | Description
+                    i.material-icons keyboard_arrow_down
+                #collapseOne.panel-collapse.collapse.in
+                  .panel-body
+                    p Eres' daring 'Grigri Fortune' swimsuit has the fit and coverage of a bikini in a one-piece silhouette. This fuchsia style is crafted from the label's sculpting peau douce fabric and has flattering cutouts through the torso and back. Wear yours with mirrored sunglasses on vacation.
+              .panel.panel-border.panel-default
+                #headingOne.panel-heading role="tab"
+                  a aria-controls="collapseOne" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button"
+                  h4.panel-title
+                    | Designer Information
+                    i.material-icons keyboard_arrow_down
+                #collapseTwo.panel-collapse.collapse
+                  .panel-body
+                    | An infusion of West Coast cool and New York attitude, Rebecca Minkoff is synonymous with It girl style. Minkoff burst on the fashion scene with her best-selling 'Morning After Bag' and later expanded her offering with the Rebecca Minkoff Collection - a range of luxe city staples with a "downtown romantic" theme.
+              .panel.panel-border.panel-default
+                #headingOne.panel-heading role="tab"
+                  a aria-controls="collapseOne" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button"
+                  h4.panel-title
+                    | Details and Care
+                    i.material-icons keyboard_arrow_down
+                #collapseThree.panel-collapse.collapse
+                  .panel-body
+                    ul
+                      li Storm and midnight-blue stretch cotton-blend
+                      li Notch lapels, functioning buttoned cuffs, two front flap pockets, single vent, internal pocket
+                      li Two button fastening
+                      li 84% cotton, 14% nylon, 2% elastane
+                      li Dry clean
+          /! end acordeon
+          .row.pick-size
+            .col-md-6.col-sm-6
+              label Select color
+              select.select.form-control
+                option value="1"  Rose
+                option value="2"  Gray
+                option value="3"  White
+            .col-md-6.col-sm-6
+              label Select size
+              select.select.form-control
+                option value="1"  Small
+                option value="2"  Medium
+                option value="3"  Large
+          .row.text-center
+            button.btn.btn-rose.btn-round
+              | 立即報名 &nbsp;
+              i.material-icons touch_app
+.features.text-center
+  .row
+    .col-md-4
+      .info
+        .icon.icon-info
+          i.material-icons local_shipping
+        h4.info-title 2 Days Delivery
+        p Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.
+    .col-md-4
+      .info
+        .icon.icon-success
+          i.material-icons verified_user
+        h4.info-title Refundable Policy
+        p Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.
+    .col-md-4
+      .info
+        .icon.icon-rose
+          i.material-icons favorite
+        h4.info-title Popular Item
+        p Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.
+.related-products
+  h3.title.text-center You may also be interested in:
+  .row
+    .col-sm-6.col-md-3
+      .card.card-product
+        .card-image
+          a href="#pablo"
+            img.img src="../assets/img/examples/card-product1.jpg" /
+        .content
+          h6.category.text-rose Trending
+          h4.card-title
+            a href="#pablo"  Dolce & Gabbana
+          .card-description
+            | Dolce & Gabbana's 'Greta' tote has been crafted in Italy from hard-wearing red textured-leather.
+          .footer
+            .price
+              h4 $1,459
+            .stats
+              button.btn.btn-just-icon.btn-simple.btn-rose rel="tooltip" title=("Saved to Wishlist") type="button"
+                i.material-icons favorite
+    .col-sm-6.col-md-3
+      .card.card-product
+        .card-image
+          a href="#pablo"
+            img.img src="../assets/img/examples/card-product3.jpg" /
+        .content
+          h6.category.text-muted Popular
+          h4.card-title
+            a href="#pablo"  Balmain
+          .card-description
+            | Balmain's mid-rise skinny jeans are cut with stretch to ensure they retain their second-skin fit but move comfortably.
+          .footer
+            .price
+              h4 $459
+            .stats
+              button.btn.btn-just-icon.btn-simple.btn-default rel="tooltip" title=("Save to Wishlist") type="button"
+                i.material-icons favorite
+    .col-sm-6.col-md-3
+      .card.card-product
+        .card-image
+          a href="#pablo"
+            img.img src="../assets/img/examples/card-product4.jpg" /
+        .content
+          h6.category.text-muted Popular
+          h4.card-title
+            a href="#pablo"  Balenciaga
+          .card-description
+            | Balenciaga's black textured-leather wallet is finished with the label's iconic 'Giant' studs. This is where you can...
+          .footer
+            .price
+              h4 $590
+            .stats
+              button.btn.btn-just-icon.btn-simple.btn-rose rel="tooltip" title=("Saved to Wishlist") type="button"
+                i.material-icons favorite
+    .col-sm-6.col-md-3
+      .card.card-product
+        .card-image
+          a href="#pablo"
+            img.img src="../assets/img/examples/card-product2.jpg" /
+        .content
+          h6.category.text-rose Trending
+          h4.card-title
+            a href="#pablo"  Dolce & Gabbana
+          .card-description
+            | Dolce & Gabbana's 'Greta' tote has been crafted in Italy from hard-wearing red textured-leather.
+          .footer
+            .price
+              h4 $1,459
+            .stats
+              button.btn.btn-just-icon.btn-simple.btn-default rel="tooltip" title=("Save to Wishlist") type="button"
+                i.material-icons favorite
+footer.footer.footer-black.footer-big
+  .container
+    .content
+      .row
+        .col-md-4
+          h5 About Us
+          p Creative Tim is a startup that creates design tools that make the web development process faster and easier.
+          p We love the web and care deeply for how users interact with a digital product. We power businesses and individuals to create better looking web projects around the world.
+        .col-md-4
+          h5 Social Feed
+          .social-feed
+            .feed-line
+              i.fa.fa-twitter
+              p How to handle ethical disagreements with your clients.
+            .feed-line
+              i.fa.fa-twitter
+              p The tangible benefits of designing at 1x pixel density.
+            .feed-line
+              i.fa.fa-facebook-square
+              p A collection of 25 stunning sites that you can use for inspiration.
+        .col-md-4
+          h5 Instagram Feed
+          .gallery-feed
+            img.img.img-raised.img-rounded alt="" src="../assets/img/faces/card-profile6-square.jpg" /
+            img.img.img-raised.img-rounded alt="" src="../assets/img/faces/christian.jpg" /
+            img.img.img-raised.img-rounded alt="" src="../assets/img/faces/card-profile4-square.jpg" /
+            img.img.img-raised.img-rounded alt="" src="../assets/img/faces/card-profile1-square.jpg" /
+            img.img.img-raised.img-rounded alt="" src="../assets/img/faces/marc.jpg" /
+            img.img.img-raised.img-rounded alt="" src="../assets/img/faces/kendall.jpg" /
+            img.img.img-raised.img-rounded alt="" src="../assets/img/faces/card-profile5-square.jpg" /
+            img.img.img-raised.img-rounded alt="" src="../assets/img/faces/card-profile2-square.jpg" /
+    hr/
+    ul.pull-left
+      li
+        a href="#pablo"
+          | Blog
+      li
+        a href="#pablo"
+          | Presentation
+      li
+        a href="#pablo"
+          | Discover
+      li
+        a href="#pablo"
+          | Payment
+      li
+        a href="#pablo"
+          | Contact Us
+    .copyright.pull-right
+      | Copyright &copy;
+      javascript:
+        | document.write(new Date().getFullYear())
+      | Creative Tim All Rights Reserved.
+/! Core JS Files
+script src="../assets/js/jquery.min.js" type="text/javascript"
+script src="../assets/js/bootstrap.min.js" type="text/javascript"
+script src="../assets/js/material.min.js"
+/! Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/
+script src="../assets/js/nouislider.min.js" type="text/javascript"
+/! Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/
+script src="../assets/js/bootstrap-datepicker.js" type="text/javascript"
+/! Plugin for Select Form control, full documentation here: https://github.com/FezVrasta/dropdown.js
+script src="../assets/js/jquery.dropdown.js" type="text/javascript"
+/! Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/
+script src="../assets/js/jquery.tagsinput.js"
+/! Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput
+script src="../assets/js/jasny-bootstrap.min.js"
+/! Plugin for Product Gallery, full documentation here: https://9bitstudios.github.io/flexisel/
+script src="../assets/js/jquery.flexisel.js"
+/! Plugin For Google Maps
+script src="https://maps.googleapis.com/maps/api/js?v=3.exp" type="text/javascript"
+/! Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc
+script src="../assets/js/material-kit.js" type="text/javascript"
+javascript:
+  | $(window).load(function() {
+      | $("#flexiselDemo1").flexisel({
+          | enableResponsiveBreakpoints: true,
+          | responsiveBreakpoints: {
+              | portrait: {
+                  | changePoint:480,
+                  | visibleItems: 3
+              | },
+              | landscape: {
+                  | changePoint:640,
+                  | visibleItems: 3
+              | },
+              | tablet: {
+                  | changePoint:768,
+                  | visibleItems: 3
+              | }
+          | }
+        | });
+  | });
