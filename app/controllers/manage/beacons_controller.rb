@@ -1,8 +1,22 @@
 require 'google/api_client/client_secrets'
+require 'google/apis/proximitybeacon_v1beta1'
 
 class Manage::BeaconsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_oauth_credentials, only: :index
   before_action :set_auth_client, only: :oauth2callback
+  before_action :set_proximity_beacon_instance, except: :oauth2callback
+
+  ProximityBeacon = Google::Apis::ProximitybeaconV1beta1
+
+  def index
+    render plain: @proximity_beacon.list_beacons.to_json
+  end
+
+
+  def show
+    render plain: @proximity_beacon.get_beacon(params[:beacon_id]).to_json
+  end
 
   def oauth2callback
     unless params[:code].present?
@@ -13,7 +27,7 @@ class Manage::BeaconsController < ApplicationController
       @auth_client.fetch_access_token!
       @auth_client.client_secret = nil
       session[:google_oauth_credentials] = @auth_client.to_json
-      render plain: @auth_client.to_json
+      redirect_to manage_beacons_path
     end
   end
 
@@ -27,4 +41,14 @@ class Manage::BeaconsController < ApplicationController
     )
   end
 
+  def check_oauth_credentials
+    redirect_to oauth2callback_manage_beacons_path unless session[:google_oauth_credentials].present?
+  end
+
+  def set_proximity_beacon_instance
+    client_opts = JSON.parse(session[:google_oauth_credentials])
+    auth_client = Signet::OAuth2::Client.new(client_opts)
+    @proximity_beacon = ProximityBeacon::ProximitybeaconService.new
+    @proximity_beacon.authorization = auth_client
+  end
 end
