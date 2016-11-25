@@ -1,0 +1,9 @@
+//= require start-ui/lib/jquery/jquery.min.js
+//= require jquery_ujs
+//= require tether
+//= require bootstrap
+//= require start-ui/plugins
+//= require jquery-ui
+//= require start-ui/lib/lobipanel/lobipanel.js
+//= require start-ui/lib/match-height/jquery.matchHeight
+//= require start-ui/app
