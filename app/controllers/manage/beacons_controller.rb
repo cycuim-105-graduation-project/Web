@@ -1,8 +1,7 @@
 require 'google/api_client/client_secrets'
 require 'google/apis/proximitybeacon_v1beta1'
 
-class Manage::BeaconsController < ApplicationController
-  before_action :authenticate_user!
+class Manage::BeaconsController < Manage::BaseController
   before_action :check_oauth_credentials, only: :index
   before_action :set_auth_client, only: :oauth2callback
   before_action :set_proximity_beacon_instance, except: :oauth2callback
