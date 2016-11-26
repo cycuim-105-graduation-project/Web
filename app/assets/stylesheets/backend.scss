@@ -1,7 +1,9 @@
-@import "start-ui/lib/lobipanel/lobipanel.css";
 @import "jquery-ui";
+@import "start-ui/lib/bootstrap-table/bootstrap-table.min";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap";
-@import "start-ui/main.css";
+@import "start-ui/main";
+@import "prism";
+@import "prism/prism-solarizedlight";
 @import "backend/*";

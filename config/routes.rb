@@ -60,6 +60,8 @@ Rails.application.routes.draw do
     get :dashboard, controller: :pages
     resources :beacons, only: %i(index) do
       get '/', constraints: { beacon_id: /beacons\/.*/ }, action: :show
+      put    :activate,   constraints: { beacon_id: /beacons\/.*/ }
+      delete :deactivate, constraints: { beacon_id: /beacons\/.*/ }
       get :oauth2callback, on: :collection
     end
   end

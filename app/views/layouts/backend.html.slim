@@ -21,5 +21,6 @@ html
 
     .page-content
       .container-fluid
-        .row
-          = yield
+        = yield
+
+    - console if params[:console] == 'true'
