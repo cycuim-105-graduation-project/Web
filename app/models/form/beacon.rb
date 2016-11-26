@@ -24,7 +24,7 @@ class Form::Beacon
   end
 
   def instance
-    @instance  ||= Base64.decode64(@advertised_id).unpack("H*")[0].last(16)
+    @instance  ||= Base64.decode64(@advertised_id).unpack("H*")[0].last(12)
   end
 
   def beacon_object

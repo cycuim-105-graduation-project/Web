@@ -1,0 +1,16 @@
+.table-responsive .bootstrap-table {
+  overflow-y: auto;
+
+  ul.dropdown-menu {
+    > li {
+      margin-left: 10px;
+      > span.checkbox {
+        display: inline-block;
+      }
+    }
+
+    label {
+      padding-left: 25px;
+    }
+  }
+}

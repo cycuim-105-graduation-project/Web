@@ -43,6 +43,7 @@ gem 'font-awesome-sass', '~> 4.7.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
   gem 'rails-assets-jquery-ui'
+  gem 'rails-assets-prism'
 end
 
 group :development, :test do

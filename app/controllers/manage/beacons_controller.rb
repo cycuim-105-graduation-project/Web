@@ -9,12 +9,26 @@ class Manage::BeaconsController < Manage::BaseController
   ProximityBeacon = Google::Apis::ProximitybeaconV1beta1
 
   def index
-    render plain: @proximity_beacon.list_beacons.to_json
+    @beacons = @proximity_beacon.list_beacons.beacons
+  rescue ArgumentError
+    # Should save refresh_token when get permissions for the first time, and use
+    # it to retrieve access token
+    redirect_to oauth2callback_manage_beacons_path
   end
 
 
   def show
     render plain: @proximity_beacon.get_beacon(params[:beacon_id]).to_json
+  end
+
+  def activate
+    @proximity_beacon.activate_beacon(params[:beacon_id])
+    redirect_to manage_beacons_path
+  end
+
+  def deactivate
+    @proximity_beacon.deactivate_beacon(params[:beacon_id])
+    redirect_to manage_beacons_path
   end
 
   def oauth2callback

@@ -1,9 +1,12 @@
-//= require start-ui/lib/jquery/jquery.min.js
+//= require start-ui/lib/jquery/jquery
 //= require jquery_ujs
 //= require tether
 //= require bootstrap
-//= require start-ui/plugins
 //= require jquery-ui
-//= require start-ui/lib/lobipanel/lobipanel.js
+//= require start-ui/plugins
 //= require start-ui/lib/match-height/jquery.matchHeight
+//= require start-ui/lib/bootstrap-table/bootstrap-table
 //= require start-ui/app
+//= require prism
+//= require prism/prism-json
+//= require_tree ./backend
