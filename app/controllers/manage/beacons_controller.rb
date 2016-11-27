@@ -16,9 +16,19 @@ class Manage::BeaconsController < Manage::BaseController
     redirect_to oauth2callback_manage_beacons_path
   end
 
-
   def show
     render plain: @proximity_beacon.get_beacon(params[:beacon_id]).to_json
+  end
+
+  def edit
+    @beacon = @proximity_beacon.get_beacon(params[:beacon_id])
+    @form_beacon = Form::Beacon.build_from_beacon_object @beacon
+  end
+
+  def update
+    beacon_object = Form::Beacon.new(form_beacon_params).beacon_object
+    @proximity_beacon.update_beacon(params[:beacon_id], beacon_object)
+    redirect_to URI.decode manage_beacon_edit_path
   end
 
   def activate
@@ -45,6 +55,13 @@ class Manage::BeaconsController < Manage::BaseController
   end
 
   private
+  def form_beacon_params
+    params.require(:form_beacon).permit(
+      :namespace, :instance, :beacon_type,:status, :expected_stability,
+      :place_id, :indoor_level, :description
+    )
+  end
+
   def set_auth_client
     client_secrets = ::Google::APIClient::ClientSecrets.load Rails.root.join('config', 'google_credentials.json')
     @auth_client = client_secrets.to_authorization
