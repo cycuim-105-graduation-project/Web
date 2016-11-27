@@ -1,0 +1,62 @@
+- provide :title, "Beacon 設定"
+
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 Beacon 設定
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Beacons', manage_beacons_path
+          li.active Beacon 設定
+
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    'Beacon ID: 
+    = @beacon.beacon_name
+  
+  = simple_form_for @form_beacon, url: URI.decode(manage_beacon_path(beacon_id: @beacon.beacon_name)), method: :put  do |f|
+    .row
+      .col-sm-6
+        fieldset.form-group
+          = f.label :namespace, "Namespace", class: 'form-label semibold' 
+          = f.input_field :namespace, placeholder: '請輸入 Eddystone Beacon Namespace', label: false, required: true, class: 'form-control'
+      .col-sm-6
+        fieldset.form-group
+          = f.label :instance, "Instance", class: 'form-label semibold' 
+          = f.input_field :instance, placeholder: '請輸入 Eddystone Beacon Instance', label: false, required: true, class: 'form-control'
+      .col-sm-12
+        fieldset.form-group
+          = f.label :beacon_type, "Beacon 類型", class: 'form-label semibold'
+          = f.input_field :beacon_type, label: false, class: 'form-control', readonly: true
+      .col-sm-6
+        fieldset.form-group
+          = f.label :status, "Beacon 狀態", class: 'form-label semibold'
+          = f.input_field :status, label: false, class: 'form-control', readonly: true, require: true
+      .col-sm-6
+        fieldset.form-group
+          = f.label :expected_stability, "Beacon 固定狀態", class: 'form-label semibold'
+          = f.input_field :expected_stability, label: false, class: 'form-control', readonly: true
+      .col-sm-6
+        fieldset.form-group
+          = f.label :place_id, "Google Place 代碼", class: 'form-label semibold'
+          = f.input_field :place_id, label: false, class: 'form-control'
+          small.text-muted
+            '您可暫時透過
+            = link_to 'Google Place ID 地點搜尋器 ', 'https://developers.google.com/places/place-id', target: '_blank'
+            '來找尋對應的 Google Place ID
+      .col-sm-6
+        fieldset.form-group
+          = f.label :indoor_level, "樓層資訊", class: 'form-label semibold'
+          = f.input_field :indoor_level, placeholder: '請輸入樓層資訊', label: false, class: 'form-control'
+      .col-sm-6 style='clear: left;'
+        fieldset.form-group
+          = f.label :description, "Beacon 描述", class: 'form-label semibold'
+          = f.input_field :description, placeholder: '請輸入 Beacon 描述', label: false, class: 'form-control'
+    
+    = f.button :submit, "儲存", class: 'btn btn-outline-primary'
+    
+
+        

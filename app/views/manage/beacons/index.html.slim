@@ -1,3 +1,5 @@
+- provide :title, "Beacons 管理"
+
 section.box-typical
   #toolbar
     .bootstrap-table-header Beacon 管理
@@ -31,4 +33,8 @@ section.box-typical
             td = beacon.expected_stability 
             td
               = link_to_modify_status(beacon)
+              | &ensp;
+              = link_to URI.decode(manage_beacon_edit_path(beacon_id: beacon.beacon_name)) do
+                i.fa.fa-pencil.text-warning
+                span.lbl &nbsp;編輯
             td = JSON.pretty_generate JSON.parse(beacon.to_json)

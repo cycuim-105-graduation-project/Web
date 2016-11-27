@@ -1,3 +1,5 @@
+require 'google/apis/proximitybeacon_v1beta1'
+
 class Form::Beacon
   include ActiveModel::Model
   include ActiveModel::Serialization
@@ -29,8 +31,12 @@ class Form::Beacon
 
   def beacon_object
     Google::Apis::ProximitybeaconV1beta1::Beacon.new(
-      advertised_id: advertised_object,
-      status: self.status
+      advertised_id:      advertised_object,
+      status:             self.status,
+      place_id:           @place_id,
+      indoor_level:       indoor_level_object,
+      expected_stability: @expected_stability,
+      description:        @description
     )
   end
 
@@ -38,6 +44,22 @@ class Form::Beacon
     Google::Apis::ProximitybeaconV1beta1::AdvertisedId.new(
       id: [@namespace + @instance].pack("H*"),
       type: "EDDYSTONE"
+    )
+  end
+
+  def indoor_level_object
+    Google::Apis::ProximitybeaconV1beta1::IndoorLevel.new(name: @indoor_level)
+  end
+
+  def self.build_from_beacon_object(beacon_object)
+    self.new(
+      advertised_id:      Base64.encode64(beacon_object.advertised_id.id).gsub("\n", ""),
+      beacon_type:        beacon_object.advertised_id.type,
+      status:             beacon_object.status,
+      expected_stability: beacon_object.expected_stability,
+      indoor_level:       beacon_object.indoor_level&.name,
+      description:        beacon_object.description,
+      place_id:           beacon_object.place_id
     )
   end
 end
