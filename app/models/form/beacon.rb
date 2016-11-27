@@ -22,11 +22,11 @@ class Form::Beacon
   end
 
   def namespace
-    @namespace ||= Base64.decode64(@advertised_id).unpack("H*")[0].first(20)
+    @namespace ||= Base64.decode64(@advertised_id).unpack("H*")[0].first(20) if @advertised_id.present?
   end
 
   def instance
-    @instance  ||= Base64.decode64(@advertised_id).unpack("H*")[0].last(12)
+    @instance  ||= Base64.decode64(@advertised_id).unpack("H*")[0].last(12)  if @advertised_id.present?
   end
 
   def beacon_object

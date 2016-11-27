@@ -58,13 +58,13 @@ Rails.application.routes.draw do
 
   namespace :manage do
     get :dashboard, controller: :pages
-    resources :beacons, only: %i(index) do
+    resources :beacons, only: %i(new index) do
       get :edit, constraints: { beacon_id: /beacons\/.*/ }
       put '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :update
       get '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :show
       put    :activate,   constraints: { beacon_id: /beacons\/.*/ }
       delete :deactivate, constraints: { beacon_id: /beacons\/.*/ }
-      # get :register, on: :collection, action: :create
+      post   :register, on: :collection, action: :create
       get :oauth2callback, on: :collection
     end
   end
