@@ -2,10 +2,14 @@
 .checkbox input[type=checkbox]:checked + label:after,
 .radio input[type=checkbox]:checked + label:after {
   @include fa-icon();
-  font: normal normal normal 14px/1 FontAwesome !important; 
+  font: normal normal normal 14px/1 FontAwesome !important;
   content: $fa-var-check;
 }
 
 .site-logo {
   margin-right: 10px;
+}
+
+.site-header .site-header-content {
+  width: auto;
 }

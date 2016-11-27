@@ -20,6 +20,16 @@ class Manage::BeaconsController < Manage::BaseController
     render plain: @proximity_beacon.get_beacon(params[:beacon_id]).to_json
   end
 
+  def new
+    @form_beacon = Form::Beacon.new
+  end
+
+  def create
+    beacon_object = Form::Beacon.new(form_beacon_params).beacon_object
+    @proximity_beacon.register_beacon(beacon_object)
+    redirect_to manage_beacons_path
+  end
+
   def edit
     @beacon = @proximity_beacon.get_beacon(params[:beacon_id])
     @form_beacon = Form::Beacon.build_from_beacon_object @beacon
