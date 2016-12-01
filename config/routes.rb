@@ -49,6 +49,17 @@ Rails.application.routes.draw do
 
   get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'
+  get 'activities', to: 'pages#activities'
+  get 'apply', to: 'pages#apply'
+  get 'membership_index', to: 'pages#membership_index'
+
+  get 'business_card_own', to: 'pages#business_card_own'
+  get 'business_card_friend', to: 'pages#business_card_friend'
+  get 'message_record', to: 'pages#message_record'
+  get 'ticket_inquiring', to: 'pages#ticket_inquiring'
+  get 'voting_record', to: 'pages#voting_record'
+  get 'contacts', to: 'pages#contacts'
+
   devise_for :users
   namespace :api do
     scope :v1 do

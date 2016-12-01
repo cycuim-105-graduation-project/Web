@@ -15,9 +15,10 @@ html lang="en"
     link href="assets/css/material-kit.css" rel="stylesheet" /
     /! CSS Just for demo purpose, don't include it in your project
     link href="assets/assets-for-demo/vertical-nav.css" rel="stylesheet" /
-  body.section-white
-    nav#sectionsNav.navbar.navbar-primary.navbar-fixed-top
+  body.contact-page
+    nav.navbar.navbar-inverse.navbar-fixed-top
       .container
+
         /! Brand and toggle get grouped for better mobile display
         .navbar-header
           button.navbar-toggle data-target="#navigation-example" data-toggle="collapse" type="button"
@@ -25,7 +26,7 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="../home"  Be connect,Beacon my friends!
+          a.navbar-brand href="../home"  Be connect , Beacon My Friends !
         #navigation-example.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
             li
@@ -39,37 +40,34 @@ html lang="en"
                 b.caret
               ul.dropdown-menu.dropdown-with-icons
                 li
-                  a href="#headers"
+                  a href="../membership_index.html"
                     i.material-icons description
                     | 會員資料修改
                 li
-                  a href="#features"
+                  a href="../business_card_own.html"
                     i.material-icons assignment_ind
                     | 個人名片
                 li
-                  a href="#blogs"
+                  a href="../business_card_friend.html"
                     i.material-icons contact_mail
-                    | 收到的名片
+                    | 名片查詢
                 li
-                  a href="#teams"
+                  a href="../voting_record.html"
                     i.material-icons assignment
                     | 投票紀錄
                 li
-                  a href="#projects"
+                  a href="../message_record.html"
                     i.material-icons insert_comment
                     | 歷史訊息
                 li
-                  a href="#pricing"
+                  a href="../ticket_inquiring.html"
                     i.material-icons search
                     | 票券查詢
                 li
-                  a href="#testimonials"
-                    i.material-icons feedback
-                    | 訊息通知
-                li
-                  a href="#contactus"
-                    i.material-icons chat
-                    | 留言板
+                  a href="../contacts.html"
+                    i.material-icons phone
+                    | 線上諮詢
+
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" href="#"
                 i.material-icons supervisor_account
@@ -77,17 +75,35 @@ html lang="en"
                 b.caret
               ul.dropdown-menu.dropdown-with-icons
                 li
-                  a href="examples/about-us.html"
+                  a href="../users/sign_in"
                     i.material-icons description
                     | 資料更新
                 li
-                  a href="examples/blog-post.html"
+                  a href="../users/sign_in"
                     i.material-icons textsms
                     | 推播訊息管理
                 li
-                  a href="examples/blog-posts.html"
-                    i.material-icons perm_identity
+                  a href="../users/sign_in"
+                    i.material-icons contact_mail
                     | 名片查詢
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                i.material-icons supervisor_account
+                | 大會管理
+                b.caret
+              ul.dropdown-menu.dropdown-with-icons
+                li
+                  a href="../users/sign_in"
+                    i.material-icons wc
+                    | 活動管理
+                li
+                  a href="../users/sign_in"
+                    i.material-icons textsms
+                    | 訊息管理
+                li
+                  a href="../users/sign_in"
+                    i.material-icons assignment
+                    | 投票管理
 
             li
                a.btn.btn-white.btn-simple[href="../about" ]
@@ -101,7 +117,7 @@ html lang="en"
     .row
       .col-md-8.col-md-offset-2.text-center
         h2.title 探索活動
-        ul.nav.nav-pills.nav-pills-rose
+        ul.nav.nav-pills.nav-pills-roese
           li.active
             a data-toggle="tab" href="#pill1"  本日最新
           li
@@ -132,7 +148,7 @@ html lang="en"
             h3.card-title The Sculpture Where Details Matter
             p.card-description
               | Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-            a.btn.btn-info.btn-round href="../apply"
+            a.btn.btn-warning.btn-round href="../apply"
               i.material-icons build
               | 活動詳細
       .col-md-6
@@ -143,7 +159,7 @@ html lang="en"
             h3.card-title The Best Productivity Apps on Market
             p.card-description
               | Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-            a.btn.btn-danger.btn-round href="../apply"
+            a.btn.btn-success.btn-round href="../apply"
               i.material-icons content_copy
               | 活動詳細
       .col-md-6
