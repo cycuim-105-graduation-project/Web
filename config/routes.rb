@@ -59,13 +59,17 @@ Rails.application.routes.draw do
   namespace :manage do
     get :dashboard, controller: :pages
     resources :beacons, only: %i(new index) do
-      get :edit,     constraints: { beacon_id: /beacons\/.*/ }
-      put :activate, constraints: { beacon_id: /beacons\/.*/ }
-      delete :deactivate, constraints: { beacon_id: /beacons\/.*/ }
-      put '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :update
-      get '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :show
+      get    :edit,       constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }
+      put    :activate,   constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }
+      delete :deactivate, constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }
+      put    '/',         constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }, action: :update
+      get    '/',         constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }, action: :show
       post :register, on: :collection, action: :create
-      get  :oauth2callback, on: :collection
+      get  :oauth2callback, on: :collection, to: 'pages#oauth2callback'
+
+      resources :attachments, only: %i(index new create),
+                constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ } do
+      end
     end
   end
 
