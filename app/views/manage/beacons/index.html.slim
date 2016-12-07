@@ -3,14 +3,11 @@
 section.box-typical
   #toolbar
     .bootstrap-table-header Beacon 管理
-    button#remove.btn.btn-danger.remove disabled=''
-      i.fa.fa-times-circle
-      | &nbsp;Delete
+    button.btn.btn-primary disabled=''
+      i.fa.fa-plus-circle
+      | &nbsp;新增 Beacon
   .table-responsive
     table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='true' data-detail-formatter='detailFormatter'
-      / data-show-columns='false' data-show-export='false'
-      / data-minimum-count-columns='true' data-show-pagination-switch='true'
-      / data-pagination='true' data-show-footer='false'
       thead
         th data-visible='false' Beacon Name
         th Type
@@ -34,7 +31,11 @@ section.box-typical
             td
               = link_to_modify_status(beacon)
               | &ensp;
-              = link_to URI.decode(manage_beacon_edit_path(beacon_id: beacon.beacon_name)) do
+              = link_to URI.decode(manage_beacon_edit_path(beacon_id: beacon.beacon_name)), method: :post do
                 i.fa.fa-pencil.text-warning
                 span.lbl &nbsp;編輯
+              | &ensp;
+              = link_to URI.decode(manage_beacon_attachments_path(beacon_id: beacon.beacon_name)) do
+                i.fa.fa-envelope-open-o.text-info
+                span.lbl &nbsp;所有訊息
             td = JSON.pretty_generate JSON.parse(beacon.to_json)

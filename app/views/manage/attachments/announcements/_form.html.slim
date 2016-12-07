@@ -1,0 +1,24 @@
+= simple_form_for @form_announcement, url: url, method: method  do |f|
+  .row
+    .col-sm-12
+      fieldset.form-group
+        = f.label :attachment_type, "Attachment 類型", class: 'form-label semibold'
+        = f.input_field :attachment_type, label: false, class: 'form-control', readonly: true
+    .col-sm-6
+      fieldset.form-group
+        = f.label :category, "公告類型", class: 'form-label semibold' 
+        = f.input_field :category, placeholder: '請輸入公告類型', label: false, required: true, class: 'form-control'
+    .col-sm-6
+      fieldset.form-group
+        = f.label :subject, "公告主題", class: 'form-label semibold' 
+        = f.input_field :subject, placeholder: '請輸入公告主題', label: false, required: true, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :content, "公告內文", class: 'form-label semibold'
+        = f.input_field :content, placeholder: '請輸入公告內文', label: false, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :attachment, "附加檔案", class: 'form-label semibold'
+        = f.input_field :attachment, label: false, class: 'form-control', placeholder: '請輸入附加檔案網址'
+
+  = f.button :submit, "儲存", class: 'btn btn-outline-primary'

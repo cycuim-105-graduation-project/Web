@@ -67,8 +67,12 @@ Rails.application.routes.draw do
       post :register, on: :collection, action: :create
       get  :oauth2callback, on: :collection, to: 'pages#oauth2callback'
 
-      resources :attachments, only: %i(index new create),
-                constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ } do
+
+      resources :attachments, only: %i(index destroy),
+                constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/, id: /beacons\/\d{1}!\w{32}\/attachments\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/ }
+
+      namespace :attachments, constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ } do
+        resources :announcements, only: %i(new create)
       end
     end
   end
