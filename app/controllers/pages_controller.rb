@@ -1,4 +1,4 @@
-class PagesController <ApplicationController
+class PagesController < ApplicationController
   def home
     render layout: 'application'
   end
@@ -29,7 +29,7 @@ class PagesController <ApplicationController
 
   def voting_record
   end
-  
+
   def contacts
   end
 

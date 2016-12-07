@@ -52,7 +52,6 @@ Rails.application.routes.draw do
   get 'activities', to: 'pages#activities'
   get 'apply', to: 'pages#apply'
   get 'membership_index', to: 'pages#membership_index'
-
   get 'business_card_own', to: 'pages#business_card_own'
   get 'business_card_friend', to: 'pages#business_card_friend'
   get 'message_record', to: 'pages#message_record'
@@ -66,6 +65,18 @@ Rails.application.routes.draw do
       mount_devise_token_auth_for 'User', at: 'auth'
     end
   end
+  namespace :manage do
+  get :dashboard, controller: :pages
+  resources :beacons, only: %i(new index) do
+    get :edit,     constraints: { beacon_id: /beacons\/.*/ }
+    put :activate, constraints: { beacon_id: /beacons\/.*/ }
+    delete :deactivate, constraints: { beacon_id: /beacons\/.*/ }
+    put '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :update
+    get '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :show
+    post :register, on: :collection, action: :create
+    get  :oauth2callback, on: :collection
+  end
+end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
