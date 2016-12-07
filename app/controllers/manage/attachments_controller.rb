@@ -7,7 +7,7 @@ class Manage::AttachmentsController < Manage::BaseController
 
   def index
     attachments = @proximity_beacon.list_beacon_attachments(params[:beacon_id]).attachments
-    @attachments = attachments.map do |attachment|
+    @attachments = attachments&.map do |attachment|
       Form::Beacon::Attachment.new(
         namespaced_type: attachment.namespaced_type,
         attachment_name: attachment.attachment_name,

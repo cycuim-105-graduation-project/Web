@@ -17,7 +17,7 @@ section.box-typical
         th Actions
         th data-visible='false' data-switchable='false' JSON
       tbody
-        - @attachments.each do |attachment|
+        - @attachments&.each do |attachment|
           tr
             td = attachment.beacon_id
             td = attachment.attachment_name&.split(/(beacons\/\d{1}!\w{32})\/(attachments\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12})/)&.third

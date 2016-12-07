@@ -15,7 +15,7 @@ module Form::Beacon::BaseAttachment
     def attachment_object
       Google::Apis::ProximitybeaconV1beta1::BeaconAttachment.new(
         namespaced_type: self.namespaced_type,
-        data: [self.data].pack("H*")
+        data: self.data
       )
     end
   end
