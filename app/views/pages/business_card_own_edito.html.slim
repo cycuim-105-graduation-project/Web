@@ -1,0 +1,215 @@
+| <!doctype html
+html lang="en"
+  head
+    meta charset="utf-8" /
+    link href="assets/img/apple-icon.png" rel="apple-touch-icon" sizes="76x76" /
+    link href="assets/img/favicon.png" rel="icon" type="image/png" /
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /
+    title Sections - Material Kit PRO by Creative Tim
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /
+    /! Fonts and icons
+    link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" rel="stylesheet" type="text/css" /
+    link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet" /
+    /! CSS Files
+    link href="assets/css/bootstrap.min.css" rel="stylesheet" /
+    link href="assets/css/material-kit.css" rel="stylesheet" /
+    /! CSS Just for demo purpose, don't include it in your project
+    link href="assets/assets-for-demo/vertical-nav.css" rel="stylesheet" /
+  body.contact-page
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle data-target="#navigation-example" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href="../home"   Be connect , Beacon My Friends !
+        #navigation-example.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a href="../activities"
+                i.material-icons apps
+                | 活動總覽
+            li#headerNavigationItems.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                i.material-icons person
+                | 會員管理
+                b.caret
+              ul.dropdown-menu.dropdown-with-icons
+                li
+                  a href="../membership_index.html"
+                    i.material-icons description
+                    | 會員資料修改
+                li
+                  a href="../business_card_own.html"
+                    i.material-icons assignment_ind
+                    | 個人名片
+                li
+                  a href="../business_card_friend.html"
+                    i.material-icons contact_mail
+                    | 名片查詢
+                li
+                  a href="../voting_record.html"
+                    i.material-icons assignment
+                    | 投票紀錄
+                li
+                  a href="../message_record.html"
+                    i.material-icons insert_comment
+                    | 歷史訊息
+                li
+                  a href="../ticket_inquiring.html"
+                    i.material-icons search
+                    | 票券查詢
+                li
+                  a href="../contacts.html"
+                    i.material-icons phone
+                    | 線上諮詢
+
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                i.material-icons supervisor_account
+                | 廠商管理
+                b.caret
+              ul.dropdown-menu.dropdown-with-icons
+                li
+                  a href="../users/sign_in"
+                    i.material-icons description
+                    | 資料更新
+                li
+                  a href="../users/sign_in"
+                    i.material-icons textsms
+                    | 推播訊息管理
+                li
+                  a href="../users/sign_in"
+                    i.material-icons contact_mail
+                    | 名片查詢
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                i.material-icons supervisor_account
+                | 大會管理
+                b.caret
+              ul.dropdown-menu.dropdown-with-icons
+                li
+                  a href="../users/sign_in"
+                    i.material-icons wc
+                    | 活動管理
+                li
+                  a href="../users/sign_in"
+                    i.material-icons textsms
+                    | 訊息管理
+                li
+                  a href="../users/sign_in"
+                    i.material-icons assignment
+                    | 投票管理
+
+            li
+               a.btn.btn-white.btn-simple[href="../about" ]
+                i.material-icons account_balance
+                | 關於我們
+  .page-header.header-small data-parallax="active" filter-color="rose" style="background-image: url('#{ image_url('bg6.jpg') }');"
+  .section.section-gray
+    .main.main-raised
+      .contact-content
+        .container
+          h2.title 名片修改
+          .row
+            .col-md-6
+              p.description
+                | 您可以在此編輯您的個人名片，並透過系統授權發送電子名片與獲取其他使用者之名片
+                br/
+                br/
+              form#contact-form method="post" role="form"
+                .form-group.label-floating
+                  label.control-label 姓名
+                  input.form-control name="name" type="text" /
+                .form-group.label-floating
+                  label.control-label 電子信箱
+                  input.form-control name="email" type="email" /
+                .form-group.label-floating
+                  label.control-label 行動電話
+                  input.form-control name="phone" type="text" /
+                .form-group.label-floating
+                  label.control-label 公司名稱
+                  input.form-control name="phone" type="text" /
+                .form-group.label-floating
+                  label.control-label 擔任職務
+                  input.form-control name="phone" type="text" /
+                .form-group.label-floating
+                  label.control-label 專業技術
+                  textarea#message.form-control name="message" rows="6"
+
+
+            .col-md-4.col-md-offset-2
+              h4
+                small Avatar
+              .fileinput.fileinput-new.text-center data-provides="fileinput"
+                .fileinput-new.thumbnail.img-circle.img-raised
+                = image_tag 'placeholder.jpg'
+
+
+                .fileinput-preview.fileinput-exists.thumbnail.img-circle.img-raised
+                div
+                  span.btn.btn-raised.btn-round.btn-default.btn-file
+                    span.fileinput-new Add Photo
+                    span.fileinput-exists Change
+                    input name="..." type="file" /
+                  br/
+                  a.btn.btn-danger.btn-round.fileinput-exists data-dismiss="fileinput" href="#pablo"
+                    i.fa.fa-times
+                    | Remove
+              .form-group.label-floating
+                label.control-label 自我介紹
+                textarea#message.form-control name="message" rows="3"
+              .form-group.label-floating
+                label.control-label 經歷敘述
+                textarea#message.form-control name="message" rows="6"
+              .submit.text-center
+                input.btn.btn-primary.btn-raised.btn-round type="submit" value=("修改送出") /
+
+    footer.footer
+      .container
+        nav.pull-left
+          ul
+            li
+              a href="http://www.creative-tim.com"
+                | Creative Tim
+            li
+              a href="http://presentation.creative-tim.com"
+                | About Us
+            li
+              a href="http://blog.creative-tim.com"
+                | Blog
+            li
+              a href="http://www.creative-tim.com/license"
+                | Licenses
+        .copyright.pull-right
+          | \&copy;
+          javascript:
+            | document.write(new Date().getFullYear())
+          | , made with
+          i.fa.fa-heart.heart
+          | by Creative Tim
+  /! Core JS Files
+  script src="../assets/js/jquery.min.js" type="text/javascript"
+  script src="../assets/js/bootstrap.min.js" type="text/javascript"
+  script src="../assets/js/material.min.js"
+  /! Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/
+  script src="../assets/js/nouislider.min.js" type="text/javascript"
+  /! Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/
+  script src="../assets/js/bootstrap-datepicker.js" type="text/javascript"
+  /! Plugin for Select Form control, full documentation here: https://github.com/FezVrasta/dropdown.js
+  script src="../assets/js/jquery.dropdown.js" type="text/javascript"
+  /! Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/
+  script src="../assets/js/jquery.tagsinput.js"
+  /! Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput
+  script src="../assets/js/jasny-bootstrap.min.js"
+  /! Plugin For Google Maps
+  script src="https://maps.googleapis.com/maps/api/js?v=3.exp" type="text/javascript"
+  /! Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc
+  script src="../assets/js/material-kit.js" type="text/javascript"
+  javascript:
+    | $().ready(function(){
+    	/!/ the body of this function is in assets/material-kit.js
+    	| materialKitDemo.initContactUsMap();
+    | });
