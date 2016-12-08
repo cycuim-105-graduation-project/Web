@@ -4,36 +4,46 @@ class PagesController < ApplicationController
   end
 
   def about
+
   end
 
   def activities
+
   end
 
   def apply
+
   end
 
   def membership_index
+
   end
 
   def business_card_own
+
   end
 
   def business_card_friend
+
   end
 
   def business_card_own_edito
+
   end
 
   def message_record
+
   end
 
   def ticket_inquiring
+
   end
 
   def voting_record
+
   end
 
   def contacts
-  end
 
+  end
 end
