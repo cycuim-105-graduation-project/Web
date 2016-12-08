@@ -66,17 +66,17 @@ Rails.application.routes.draw do
     end
   end
   namespace :manage do
-  get :dashboard, controller: :pages
-  resources :beacons, only: %i(new index) do
-    get :edit,     constraints: { beacon_id: /beacons\/.*/ }
-    put :activate, constraints: { beacon_id: /beacons\/.*/ }
-    delete :deactivate, constraints: { beacon_id: /beacons\/.*/ }
-    put '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :update
-    get '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :show
-    post :register, on: :collection, action: :create
-    get  :oauth2callback, on: :collection
+    get :dashboard, controller: :pages
+    resources :beacons, only: %i(new index) do
+      get :edit,     constraints: { beacon_id: /beacons\/.*/ }
+      put :activate, constraints: { beacon_id: /beacons\/.*/ }
+      delete :deactivate, constraints: { beacon_id: /beacons\/.*/ }
+      put '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :update
+      get '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :show
+      post :register, on: :collection, action: :create
+      get  :oauth2callback, on: :collection
+    end
   end
-end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
