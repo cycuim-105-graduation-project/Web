@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   get 'membership_index', to: 'pages#membership_index'
   get 'business_card_own', to: 'pages#business_card_own'
   get 'business_card_friend', to: 'pages#business_card_friend'
+  get 'business_card_own_edito', to: 'pages#business_card_own_edito'
   get 'message_record', to: 'pages#message_record'
   get 'ticket_inquiring', to: 'pages#ticket_inquiring'
   get 'voting_record', to: 'pages#voting_record'

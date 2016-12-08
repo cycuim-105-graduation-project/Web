@@ -21,6 +21,9 @@ class PagesController < ApplicationController
   def business_card_friend
   end
 
+  def business_card_own_edito
+  end
+
   def message_record
   end
 
