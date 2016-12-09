@@ -1,0 +1,20 @@
+- provide :title, "新增公告 於 Beacon: #{params[:beacon_id]} 上"
+
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 新增公告推播
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Beacons', manage_beacons_path
+          li
+            = link_to params[:beacon_id].last(16), URI.decode(manage_beacon_edit_path(params[:beacon_id]))
+          li.active 新增公告推播
+          
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border 新增公告推播於: Beacon #{params[:beacon_id]}
+  
+  = render 'manage/attachments/announcements/form', url: URI.decode(manage_beacon_attachments_announcements_path(beacon_id: params[:beacon_id])), method: :post
