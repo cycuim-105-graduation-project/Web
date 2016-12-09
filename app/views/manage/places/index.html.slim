@@ -1,0 +1,26 @@
+- provide :title, "Places 管理"
+
+section.box-typical
+  #toolbar
+    .bootstrap-table-header Place 管理
+  .table-responsive
+    table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='true' data-detail-formatter='detailFormatter'
+      thead
+        th Name
+        th Description
+        th Address
+        th Google Place ID
+        th Action
+      tbody
+        - current_collection.each do |place|
+          tr
+            td = place.name
+            td = place.description
+            td = place.address
+            td = place.google_place_id
+            td
+              = link_to edit_manage_place_path(id: place.id)
+                i.fa.fa-pencil.text-warning
+                span.lbl &nbsp;編輯
+              | &ensp;
+              
