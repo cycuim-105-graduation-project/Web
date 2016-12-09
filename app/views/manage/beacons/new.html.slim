@@ -1,0 +1,19 @@
+- provide :title, "Beacon 註冊"
+
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 Beacon 註冊
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Beacons', manage_beacons_path
+          li.active Beacon 註冊
+          
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    'Beacon 註冊
+    
+  = render 'manage/beacons/form', url: register_manage_beacons_path, method: :post

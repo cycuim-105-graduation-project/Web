@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include DeviseTokenAuth::Concerns::SetUserByToken
+  # include DeviseTokenAuth::Concerns::SetUserByToken
   protect_from_forgery with: :null_session
 
   prepend_before_action :configure_permitted_parameters, if: :devise_controller?

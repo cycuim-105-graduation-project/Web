@@ -1,0 +1,20 @@
+- provide :title, "Beacon 設定"
+
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 Beacon 設定
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Beacons', manage_beacons_path
+          li.active Beacon 設定
+
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    'Beacon ID: 
+    = @beacon.beacon_name
+  
+  = render 'manage/beacons/form', url: URI.decode(manage_beacon_path(beacon_id: @beacon.beacon_name)), method: :put

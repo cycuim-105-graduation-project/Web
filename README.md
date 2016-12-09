@@ -13,6 +13,7 @@
 $ bundle install
 $ cp config/application.yml.example config/application.yml
 $ cp config/database.yml.example config/database.yml
+$ cp config/google_credentials.json.example config/google_credentials.json
 $ rake db:setup
 $ rake server
 ```

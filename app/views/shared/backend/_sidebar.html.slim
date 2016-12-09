@@ -1,0 +1,16 @@
+nav.side-menu
+  ul.side-menu-list
+    li.grey
+      = link_to manage_dashboard_path do
+        i.fa.fa-th-large aria-hidden='true'
+        span.lbl Dashboard
+    li.brown.with-sub
+      span
+        i.fa.fa-location-arrow
+        span.lbl Beacons
+      ul
+        li
+          = link_to manage_beacons_path do
+            span.lbl Beacon 管理
+          = link_to new_manage_beacon_path do
+            span.lbl 新增 Beacon

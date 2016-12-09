@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'
+    meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'
+
+    title
+      = yield :title
+      ' | 管理後台
+    = csrf_meta_tags
+    = stylesheet_link_tag    'backend', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'backend', 'data-turbolinks-track': 'reload'
+
+  body.with-side-menu
+
+    = render 'shared/backend/header'
+
+    .mobile-menu-left-overlay
+    
+    = render 'shared/backend/sidebar'
+
+    .page-content
+      .container-fluid
+        = yield
+
+    - console if params[:console] == 'true'

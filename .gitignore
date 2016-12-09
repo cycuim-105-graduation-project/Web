@@ -27,3 +27,10 @@
 # Ignore Material-Kit assets
 /vendor/assets/javascripts/material-kit/*
 /vendor/assets/stylesheets/material-kit/*
+/vendor/assets/javascripts/start-ui/*
+/vendor/assets/stylesheets/start-ui/*
+
+# Ignore application configuration
+/config/application.yml
+/config/settings.yml
+/config/google_credentials.json

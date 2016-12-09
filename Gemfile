@@ -31,13 +31,20 @@ gem 'omniauth'
 gem 'settingslogic'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'figaro'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'google-api-client', '~> 0.9.19'
+gem 'active_model_serializers'
+gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'font-awesome-sass', '~> 4.7.0'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+  gem 'rails-assets-jquery-ui'
+  gem 'rails-assets-prism'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,7 +68,13 @@ group :development do
   # Supporting gem for Rails Panel
   gem 'meta_request'
   gem 'bullet'
-  gem 'rack-mini-profiler', github: 'MiniProfiler/rack-mini-profiler'
+  gem 'rack-mini-profiler', git: 'https://github.com/MiniProfiler/rack-mini-profiler.git'
+  gem 'highline'
+  # Use Capistrano for deployment
+  gem 'capistrano-rbenv',   require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
