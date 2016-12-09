@@ -1,0 +1,19 @@
+- provide :title, "活動新增"
+  
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 活動新增
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Events', manage_events_path
+          li.active 活動新增
+  
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    '活動新增
+    
+  = render 'manage/events/form', url: manage_events_path, method: :post

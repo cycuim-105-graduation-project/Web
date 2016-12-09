@@ -1,0 +1,41 @@
+= simple_form_for @current_object, url: url, method: method do |f|
+  .row
+    .col-sm-12
+      fieldset.form-group
+        = f.label :name, "活動名稱", class: 'form-label semibold'
+        = f.input_field :name, placeholder: "請輸入活動名稱", label: false, required: true, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :description, "活動描述", class: 'form-label semibold'
+        = f.input_field :description, placeholder: '請輸入活動描述', label: false, required: true, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :feature_img, "活動圖片", class: 'form-label semibold'
+        = f.input_field :feature_img, as: :file, label: false, required: true
+    .col-sm-12
+      fieldset.form-group
+        = f.label :start_at, "活動起始時間", class: 'form-label semibold'
+        = f.input_field :start_at, label: false, required: true
+    .col-sm-12
+      fieldset.form-group
+        = f.label :end_at, "活動結束時間", class: 'form-label semibold'
+        = f.input_field :end_at, label: false, required: true
+    .col-sm-12
+      fieldset.form-group
+        = f.label :registration_start_at, "註冊起始時間", class: 'form-label semibold'
+        = f.input_field :registration_start_at, label: false, required: true
+    .col-sm-12
+      fieldset.form-group
+        = f.label :registration_end_at, "註冊結束時間", class: 'form-label semibold'
+        = f.input_field :registration_end_at, label: false, required: true
+    .col-sm-12
+      fieldset.form-group
+        = f.label :place, "活動地點", class: 'form-label semibold'
+        = f.association :place, label: false, required: true
+    .col-sm-12
+      fieldset.form-group
+        = f.label :quantity, "活動容納人數", class: 'form-label semibold'
+        = f.input_field :quantity, label: false, required: true, class: 'form-control'
+        
+  = f.button :submit, "儲存", class: 'btn btn-outline-primary'
+    

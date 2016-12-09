@@ -1,0 +1,26 @@
+= simple_form_for @current_object, url: url, method: method do |f|
+  .row
+    .col-sm-12
+      fieldset.form-group
+        = f.label :name, "地點名稱", class: 'form-label semibold'
+        = f.input_field :name, placeholder: '請輸入地點名稱', label: false, required: true, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :description, "地點描述", class: 'form-label semibold'
+        = f.input_field :description, placeholder: '請輸入地點描述', label: false, required: false, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :address, "地址", class: 'form-label semibold'
+        = f.input_field :address, placeholder: '請輸入地址', label: false, required: false, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :google_place_id, "Google Place 代碼", class: 'form-label semibold'
+        = f.input_field :google_place_id, label: false, class: 'form-control'
+        small.text-muted
+          '您可暫時透過
+          = link_to 'Google Place ID 地點搜尋器 ', 'https://developers.google.com/places/place-id', target: '_blank'
+          '來找尋對應的 Google Place ID
+    
+  = f.button :submit, "儲存", class: 'btn btn-outline-primary'
+        
+        

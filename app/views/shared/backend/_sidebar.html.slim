@@ -4,6 +4,30 @@ nav.side-menu
       = link_to manage_dashboard_path do
         i.fa.fa-th-large aria-hidden='true'
         span.lbl Dashboard
+    li.green.with-sub
+      span
+        i.fa.fa-map-marker
+        span.lbl 地點
+      ul
+        li
+          = link_to manage_places_path do
+            span.lbl 地點管理
+        li
+          = link_to new_manage_place_path do
+            span.lbl 新增地點
+    
+    li.purple.with-sub
+      span
+        i.fa.fa-calendar
+        span.lbl 活動
+      ul
+        li
+          = link_to manage_events_path do
+            span.lbl 活動管理
+        li
+          = link_to new_manage_event_path do
+            span.lbl 新增活動
+    
     li.brown.with-sub
       span
         i.fa.fa-location-arrow
@@ -12,5 +36,6 @@ nav.side-menu
         li
           = link_to manage_beacons_path do
             span.lbl Beacon 管理
+        li
           = link_to new_manage_beacon_path do
             span.lbl 新增 Beacon

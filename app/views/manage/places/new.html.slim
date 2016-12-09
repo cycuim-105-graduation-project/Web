@@ -1,0 +1,19 @@
+- provide :title, "地點新增"
+
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 地點新增
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Places', manage_places_path
+          li.active 地點新增
+
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    '地點新增
+    
+  = render 'manage/places/form', url: manage_places_path, method: :post

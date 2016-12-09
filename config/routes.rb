@@ -75,6 +75,8 @@ Rails.application.routes.draw do
         resources :announcements, only: %i(new create)
       end
     end
+
+    resources :places, :events
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
