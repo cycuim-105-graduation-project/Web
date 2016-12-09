@@ -40,6 +40,8 @@ gem 'google-api-client', '~> 0.9.19'
 gem 'active_model_serializers'
 gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'font-awesome-sass', '~> 4.7.0'
+gem 'carrierwave'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
   gem 'rails-assets-jquery-ui'
