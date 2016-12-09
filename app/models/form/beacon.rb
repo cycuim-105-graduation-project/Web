@@ -18,7 +18,7 @@ class Form::Beacon
   def advertised_id
     # Calculate advertised_id with Eddystone UID
     # https://developers.google.com/beacons/proximity/register
-    @advertised_id ||= Base64.encode64 [@namespace + @instance].pack("H*").gsub("\n", "") if @namespace.present? && @instance.present?
+    @advertised_id ||= Base64.encode64 [@namespace + @instance].pack("H*").gsub("\n", "")
   end
 
   def namespace

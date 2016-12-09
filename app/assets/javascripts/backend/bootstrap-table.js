@@ -10,8 +10,3 @@ function detailFormatter(index, row, element) {
   var raw_response = Prism.highlight(row[8], Prism.languages.json);
   return "<pre class='language-json'><code>" + raw_response + "</code></pre>";
 }
-
-function attachmentDetailFormatter(index, row, element) {
-  var raw_response = Prism.highlight(row[6], Prism.languages.json);
-  return "<pre class='language-json'><code>" + raw_response + "</code></pre>";
-}

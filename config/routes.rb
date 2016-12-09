@@ -59,21 +59,13 @@ Rails.application.routes.draw do
   namespace :manage do
     get :dashboard, controller: :pages
     resources :beacons, only: %i(new index) do
-      get    :edit,       constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }
-      put    :activate,   constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }
-      delete :deactivate, constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }
-      put    '/',         constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }, action: :update
-      get    '/',         constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ }, action: :show
+      get :edit,     constraints: { beacon_id: /beacons\/.*/ }
+      put :activate, constraints: { beacon_id: /beacons\/.*/ }
+      delete :deactivate, constraints: { beacon_id: /beacons\/.*/ }
+      put '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :update
+      get '/',   constraints: { beacon_id: /beacons\/.*/ }, action: :show
       post :register, on: :collection, action: :create
-      get  :oauth2callback, on: :collection, to: 'pages#oauth2callback'
-
-
-      resources :attachments, only: %i(index destroy),
-                constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/, id: /beacons\/\d{1}!\w{32}\/attachments\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/ }
-
-      namespace :attachments, constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ } do
-        resources :announcements, only: %i(new create)
-      end
+      get  :oauth2callback, on: :collection
     end
   end
 
