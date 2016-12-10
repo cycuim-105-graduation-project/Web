@@ -23,4 +23,6 @@ section.box-typical
                 i.fa.fa-pencil.text-warning
                 span.lbl &nbsp;編輯
               | &ensp;
-              
+              = link_to manage_place_path(id: place.id), method: :delete do
+                i.fa.fa-pencil.text-warning
+                span.lbl &nbsp;刪除
