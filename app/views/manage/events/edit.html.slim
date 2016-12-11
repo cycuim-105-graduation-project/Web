@@ -14,7 +14,8 @@ header.section-header
 
 .box-typical.box-typical-padding
   h4.m-t-lg.with-border
-    'Event ID: 
-    = current_object.update(object_id)
+    ' 編輯活動
+    = current_object.name 
+    
   
-  = render 'manage/places/form', url: manage_event_path(id: object_id), method: :put
+  = render 'manage/events/form', url: manage_event_path(id: current_object.id), method: :put

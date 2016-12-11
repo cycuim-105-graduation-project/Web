@@ -3,7 +3,7 @@
 section.box-typical
   #toolbar
     .bootstrap-table-header Beacon 管理
-    button.btn.btn-primary disabled=''
+    = link_to new_manage_beacon_path, class: 'btn btn-primary' do
       i.fa.fa-plus-circle
       | &nbsp;新增 Beacon
   .table-responsive

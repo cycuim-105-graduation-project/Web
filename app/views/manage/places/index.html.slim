@@ -4,7 +4,7 @@ section.box-typical
   #toolbar
     .bootstrap-table-header Place 管理
   .table-responsive
-    table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='true' data-detail-formatter='detailFormatter'
+    table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='false' data-detail-formatter='detailFormatter'
       thead
         th Name
         th Description
@@ -19,10 +19,11 @@ section.box-typical
             td = place.address
             td = place.google_place_id
             td
-              = link_to edit_manage_place_path(id: place.id)
-                i.fa.fa-pencil.text-warning
-                span.lbl &nbsp;編輯
-              | &ensp;
-              = link_to manage_place_path(id: place.id), method: :delete do
-                i.fa.fa-pencil.text-warning
-                span.lbl &nbsp;刪除
+              p
+                = link_to edit_manage_place_path(id: place.id) do
+                  i.fa.fa-pencil.text-warning
+                  span.lbl &nbsp;編輯
+              p
+                = link_to manage_place_path(id: place.id), method: :delete do
+                  i.fa.fa-trash
+                  span.lbl &nbsp;刪除

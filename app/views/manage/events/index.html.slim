@@ -4,35 +4,36 @@ section.box-typical
   #toolbar
     .bootstrap-table-header Event 管理
   .table-responsive
-    table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='true' data-detail-formatter='detailFormatter'
+    table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='false' data-detail-formatter='detailFormatter'
       thead
         th Name
-        th Description
-        th data-visible='false' Feature Img
+        th data-width='30%' Description
+        th Feature Img
         th Start At
         th End At
         th data-visible='false' Registration Strat At
         th data-visible='false' Registration End At
-        th data-visible='false' Place
+        th Place
         th data-visible='false' Quantity        
-        th Action
+        th data-width='65px' Action
       tbody
         - current_collection.each do |event|
           tr
             td = event.name
             td = event.description
-            td = event.feature_img
+            td = image_tag event.feature_img_url, class: 'preview-img'
             td = event.start_at
             td = event.end_at
             td = event.registration_start_at
             td = event.registration_end_at
-            td = event.place
+            td = event.place.name
             td = event.quantity
-            td 
-              = link_to edit_manage_event_path(id: event.id)
-                i.fa.fa-pencil.text-warning
-                span.lbl &nbsp;編輯
-              | &ensp;
-              = link_to manage_event_path(id: event.id), method: :delete do
-                i.fa.fa-pencil.text-warning
-                span.lbl &nbsp;刪除
+            td
+              p
+                = link_to edit_manage_event_path(id: event.id)
+                  i.fa.fa-pencil.text-warning
+                  span.lbl &nbsp;編輯
+              p
+                = link_to manage_event_path(id: event.id), method: :delete do
+                  i.fa.fa-trash
+                  span.lbl &nbsp;刪除

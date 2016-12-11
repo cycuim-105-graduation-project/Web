@@ -14,7 +14,8 @@ header.section-header
 
 .box-typical.box-typical-padding
   h4.m-t-lg.with-border
-    'Place ID: 
-    = current_object.update(object_id)
+    ' 編輯地點
+    = current_object.name 
   
-  = render 'manage/places/form', url: manage_place_path(id: object_id), method: :put
+  
+  = render 'manage/places/form', url: manage_place_path(id: current_object.id), method: :put
