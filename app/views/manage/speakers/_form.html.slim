@@ -12,6 +12,8 @@
       fieldset.form-group
         = f.label :image, "講者圖片", class: 'form-label semibold'
         = f.input_field :image, as: :file, placeholder: '請選擇講者圖片', label: false, required: true, class: 'form-control'
+      - if current_object.image.url.present?
+        = image_tag current_object.image_url, class: 'preview-img'
     .col-sm-12
       fieldset.form-group
         = f.label :agenda, "所屬議程", class: 'form-label semibold'
