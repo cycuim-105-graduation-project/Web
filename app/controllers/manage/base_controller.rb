@@ -1,3 +1,6 @@
+require 'google/api_client/client_secrets'
+require 'google/apis/proximitybeacon_v1beta1'
+
 class Manage::BaseController < ApplicationController
   layout 'backend'
   before_action :authenticate_user!
