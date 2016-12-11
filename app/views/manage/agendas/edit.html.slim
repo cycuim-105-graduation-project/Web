@@ -1,0 +1,21 @@
+- provide :title, "Agenda 設定"
+
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 議程設定
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Agendas', manage_agendas_path
+          li.active 議程設定
+
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    ' 編輯議程
+    = current_object.name 
+  
+  
+  = render 'manage/agendas/form', url: manage_agenda_path(id: current_object.id), method: :put
