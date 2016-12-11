@@ -54,7 +54,13 @@ Rails.application.routes.draw do
     scope :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'
 
-      resources :events, only: %i(index show)
+      resources :events, only: %i(index show) do
+        get :agendas
+      end
+
+      resources :checkins, only: :create do
+        get :agenda_id, on: :collection
+      end
     end
   end
 
