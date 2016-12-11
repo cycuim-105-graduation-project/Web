@@ -1,7 +1,7 @@
 class Manage::AgendasController < Manage::BasicResourceController
   private
   def collection_scope
-    Agenda.preload(:indoor_level, :event)
+    Agenda.preload(:indoor_level, :event, :speaker)
   end
 
   def object_params

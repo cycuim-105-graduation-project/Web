@@ -27,4 +27,9 @@ class Manage::EventsController < Manage::BasicResourceController
       :place_id
     )
   end
+
+  def url_after_update
+    url_for(action: :index)
+  end
+
 end
