@@ -19,6 +19,4 @@ class ApplicationController < ActionController::Base
                                              :company_address,
                                              :job_title])
   end
-
-
 end
