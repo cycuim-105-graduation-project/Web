@@ -79,7 +79,10 @@ Rails.application.routes.draw do
     end
 
     resources :places, :events, :indoor_levels, :agendas
-  end
 
+    scope 'agendas/:agenda_id' do
+      resource :speaker
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -15,7 +15,7 @@ section.box-typical
         th 場地
         th 開始時間
         th 結束時間
-        th data-width='65px' 操作
+        th data-width='70px' 操作
       tbody
         - current_collection.each do |agenda|
           tr
@@ -27,10 +27,12 @@ section.box-typical
             td = agenda.end_at
             td
               p
-                = link_to edit_manage_agenda_path(id: agenda.id) do
-                  i.fa.fa-pencil.text-warning
+                = link_to edit_manage_agenda_path(id: agenda.id), class: 'text-warning' do
+                  i.fa.fa-pencil
                   span.lbl &nbsp;編輯
               p
-                = link_to manage_agenda_path(id: agenda.id), method: :delete do
+                = link_to manage_agenda_path(id: agenda.id), method: :delete, class: 'text-danger' do
                   i.fa.fa-trash
                   span.lbl &nbsp;刪除
+              p
+                = link_for_speaker(agenda)
