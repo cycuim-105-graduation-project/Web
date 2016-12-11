@@ -1,6 +1,6 @@
 class Manage::EventsController < Manage::BasicResourceController
   def create
-    @current_object = collection_scope.new(object_params.merge(vacancy: params[:quantity]))
+    @current_object = collection_scope.new(object_params.merge(vacancy: params.dig(:event, :quantity)))
     if @current_object.save
       flash[:success] = t(".created_successfully")
       redirect_to url_after_create
