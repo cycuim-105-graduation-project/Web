@@ -13,7 +13,7 @@ section.box-typical
         th data-width='30%' 描述
         th 活動
         th 場地
-        th 講者
+        th data-width='65px' 講者
         th data-visible='false' 講者圖片
         th 開始時間
         th 結束時間
@@ -25,8 +25,8 @@ section.box-typical
             td = agenda.description
             td = agenda.event.name
             td = agenda.indoor_level.name
-            td = agenda.speaker.name
-            td = image_tag agenda.speaker.image, class: 'preview-img'
+            td = agenda.speaker&.name
+            td = image_tag agenda.speaker.image.url, class: 'preview-img' if agenda.speaker&.image_url.present?
             td = agenda.start_at
             td = agenda.end_at
             td
