@@ -11,7 +11,7 @@ class Manage::EventsController < Manage::BasicResourceController
 
   private
   def collection_scope
-    Event
+    Event.preload(:place)
   end
 
   def object_params
