@@ -1,0 +1,36 @@
+- provide :title, "Indoor Levels 管理"
+
+section.box-typical
+  #toolbar
+    .bootstrap-table-header 議程管理
+    = link_to new_manage_agenda_path, class: 'btn btn-primary' do
+      i.fa.fa-plus-circle
+      | &nbsp;新增議程
+  .table-responsive
+    table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='false' data-detail-formatter='detailFormatter'
+      thead
+        th 名稱
+        th data-width='30%' 描述
+        th 活動
+        th 場地
+        th 開始時間
+        th 結束時間
+        th data-width='65px' 操作
+      tbody
+        - current_collection.each do |agenda|
+          tr
+            td = agenda.name
+            td = agenda.description
+            td = agenda.event.name
+            td = agenda.indoor_level.name
+            td = agenda.start_at
+            td = agenda.end_at
+            td
+              p
+                = link_to edit_manage_agenda_path(id: agenda.id) do
+                  i.fa.fa-pencil.text-warning
+                  span.lbl &nbsp;編輯
+              p
+                = link_to manage_agenda_path(id: agenda.id), method: :delete do
+                  i.fa.fa-trash
+                  span.lbl &nbsp;刪除
