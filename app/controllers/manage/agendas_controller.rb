@@ -9,4 +9,9 @@ class Manage::AgendasController < Manage::BasicResourceController
       :name, :description, :event_id, :indoor_level_id, :start_at, :end_at
     )
   end
+
+  def url_after_update
+    url_for(action: :index)
+  end
+
 end
