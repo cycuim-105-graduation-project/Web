@@ -1,0 +1,19 @@
+- provide :title, "樓層新增"
+
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 樓層新增
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Indoor Level', manage_indoor_levels_path
+          li.active 樓層新增
+
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    '樓層新增
+    
+  = render 'manage/indoor_levels/form', url: manage_indoor_levels_path, method: :post
