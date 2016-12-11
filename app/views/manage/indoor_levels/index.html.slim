@@ -3,12 +3,15 @@
 section.box-typical
   #toolbar
     .bootstrap-table-header 場地管理
+    = link_to new_manage_indoor_level_path, class: 'btn btn-primary' do
+      i.fa.fa-plus-circle
+      | &nbsp;新增場地
   .table-responsive
     table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='false' data-detail-formatter='detailFormatter'
       thead
-        th Name
-        th Place
-        th Action
+        th 名稱
+        th 地點
+        th data-width='65px' 操作
       tbody
         - current_collection.each do |indoor|
           tr

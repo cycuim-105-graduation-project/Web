@@ -3,14 +3,17 @@
 section.box-typical
   #toolbar
     .bootstrap-table-header 地點管理
+    = link_to new_manage_place_path, class: 'btn btn-primary' do
+      i.fa.fa-plus-circle
+      | &nbsp;新增地點
   .table-responsive
     table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='false' data-detail-formatter='detailFormatter'
       thead
-        th Name
-        th Description
-        th Address
+        th 名稱
+        th 描述
+        th 地址
         th Google Place ID
-        th data-width='65px' Action
+        th data-width='65px' 操作
       tbody
         - current_collection.each do |place|
           tr
