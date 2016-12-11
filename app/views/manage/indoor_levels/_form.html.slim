@@ -7,5 +7,5 @@
     .col-sm-12
       fieldset.form-group
         = f.label :place, "地點", class: 'form-label semibold'
-        = f.association :place, label: false, required: true, class: 'form-control'
+        = f.association :place, label: false, required: true, input_html: { class: 'form-control col-sm-12' }
   = f.button :submit, "儲存", class: 'btn btn-outline-primary'

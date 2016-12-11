@@ -1,0 +1,25 @@
+- provide :title, "Indoor Levels 管理"
+
+section.box-typical
+  #toolbar
+    .bootstrap-table-header 場地管理
+  .table-responsive
+    table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='false' data-detail-formatter='detailFormatter'
+      thead
+        th Name
+        th Place
+        th Action
+      tbody
+        - current_collection.each do |indoor|
+          tr
+            td = indoor.name
+            td = indoor.place.name
+            td
+              p
+                = link_to edit_manage_indoor_level_path(id: indoor.id) do
+                  i.fa.fa-pencil.text-warning
+                  span.lbl &nbsp;編輯
+              p
+                = link_to manage_indoor_level_path(id: indoor.id), method: :delete do
+                  i.fa.fa-trash
+                  span.lbl &nbsp;刪除
