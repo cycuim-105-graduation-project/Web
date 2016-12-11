@@ -16,7 +16,7 @@ section.box-typical
         th Indoor Level
         th Status
         th data-visible='false' Expected Stability
-        th Action
+        th data-width='70px' Action
         th data-visible='false' data-switchable='false' JSON
       tbody
         - @beacons.each do |beacon|
@@ -29,13 +29,14 @@ section.box-typical
             td = beacon.status
             td = beacon.expected_stability 
             td
-              = link_to_modify_status(beacon)
-              | &ensp;
-              = link_to URI.decode(manage_beacon_edit_path(beacon_id: beacon.beacon_name)) do
-                i.fa.fa-pencil.text-warning
-                span.lbl &nbsp;編輯
-              | &ensp;
-              = link_to URI.decode(manage_beacon_attachments_path(beacon_id: beacon.beacon_name)) do
-                i.fa.fa-envelope-open-o.text-info
-                span.lbl &nbsp;所有訊息
+              p
+                = link_to_modify_status(beacon)
+              p
+                = link_to URI.decode(manage_beacon_edit_path(beacon_id: beacon.beacon_name)) do
+                  i.fa.fa-pencil.text-warning
+                  span.lbl &nbsp;編輯
+              p
+                = link_to URI.decode(manage_beacon_attachments_path(beacon_id: beacon.beacon_name)) do
+                  i.fa.fa-envelope-open-o.text-info
+                  span.lbl &nbsp;訊息
             td = JSON.pretty_generate JSON.parse(beacon.to_json)
