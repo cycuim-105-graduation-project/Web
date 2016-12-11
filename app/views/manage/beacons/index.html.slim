@@ -31,7 +31,7 @@ section.box-typical
             td
               = link_to_modify_status(beacon)
               | &ensp;
-              = link_to URI.decode(manage_beacon_edit_path(beacon_id: beacon.beacon_name)), method: :post do
+              = link_to URI.decode(manage_beacon_edit_path(beacon_id: beacon.beacon_name)) do
                 i.fa.fa-pencil.text-warning
                 span.lbl &nbsp;編輯
               | &ensp;
