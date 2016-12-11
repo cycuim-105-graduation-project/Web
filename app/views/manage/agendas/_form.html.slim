@@ -1,0 +1,28 @@
+= simple_form_for current_object, url: url, method: method do |f|
+  .row
+    .col-sm-12
+      fieldset.form-group
+        = f.label :name, "議程名稱", class: 'form-label semibold'
+        = f.input_field :name, placeholder: "請輸入議程名稱", label: false, required: true, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :description, "議程描述", class: 'form-label semibold'
+        = f.input_field :description, placeholder: '請輸入議程描述', label: false, required: true, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :event, "從屬活動", class: 'form-label semibold'
+        = f.association :event, label: false, required: true, input_html: { class: 'form-control col-sm-12' }
+    .col-sm-12
+      fieldset.form-group
+        = f.label :indoor_level, "所屬場地", class: 'form-label semibold'
+        = f.association :indoor_level, label: false, required: true, input_html: { class: 'form-control col-sm-12' }
+    .col-sm-12
+      fieldset.form-group
+        = f.label :start_at, "議程起始時間", class: 'form-label semibold'
+        = f.input_field :start_at, label: false, required: true
+    .col-sm-12
+      fieldset.form-group
+        = f.label :end_at, "議程結束時間", class: 'form-label semibold'
+        = f.input_field :end_at, label: false, required: true
+        
+  = f.button :submit, "儲存", class: 'btn btn-outline-primary'
