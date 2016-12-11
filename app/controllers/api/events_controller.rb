@@ -13,6 +13,7 @@ class Api::EventsController < ::ApplicationController
     @agendas = Agenda.preload(:indoor_level, :speaker)
                      .where(event_id: params[:event_id])
                      .select("*, DATE(start_at) as start_at_date")
+                     .order(start_at: :asc)
     render json: ActiveModelSerializers::SerializableResource.new(@agendas)
       .serializable_hash
       .group_by{ |x| x[:start_at_date] }
