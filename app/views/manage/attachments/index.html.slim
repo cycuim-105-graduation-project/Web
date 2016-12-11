@@ -25,7 +25,7 @@ section.box-typical
             td = attachment.namespace
             td = attachment.attachment_type
             td
-              = link_to manage_beacon_attachment_path(beacon_id: attachment.beacon_id, id: attachment.attachment_name), method: :delete do
+              = link_to URI.decode(manage_beacon_attachment_path(beacon_id: attachment.beacon_id, id: attachment.attachment_name)), method: :delete do
                 i.fa.fa-trash-o.text-danger
                 span.lbl &ensp;刪除
             td = JSON.pretty_generate JSON.parse(attachment.data)

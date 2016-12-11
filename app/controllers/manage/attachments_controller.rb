@@ -19,8 +19,8 @@ class Manage::AttachmentsController < Manage::BaseController
   end
 
   def destroy
-    @proximity_beacon.delete_beacon_attachment(patams[:id])
+    @proximity_beacon.delete_beacon_attachment(params[:id])
     flash[:success] = '成功刪除 Beacon Attachment!'
-    redirect_to manage_beacon_attachments_path
+    redirect_to URI.decode(manage_beacon_attachments_path(beacon_id: params[:beacon_id]))
   end
 end
