@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161211100520) do
+ActiveRecord::Schema.define(version: 20161211104710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+
+  create_table "agendas", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "event_id"
+    t.integer  "indoor_level_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["event_id"], name: "index_agendas_on_event_id", using: :btree
+    t.index ["indoor_level_id"], name: "index_agendas_on_indoor_level_id", using: :btree
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -47,6 +60,16 @@ ActiveRecord::Schema.define(version: 20161211100520) do
     t.string   "google_place_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "speackers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "image"
+    t.integer  "agenda_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["agenda_id"], name: "index_speackers_on_agenda_id", using: :btree
   end
 
   create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
@@ -86,6 +109,9 @@ ActiveRecord::Schema.define(version: 20161211100520) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
   end
 
+  add_foreign_key "agendas", "events"
+  add_foreign_key "agendas", "indoor_levels"
   add_foreign_key "events", "places"
   add_foreign_key "indoor_levels", "places"
+  add_foreign_key "speackers", "agendas"
 end

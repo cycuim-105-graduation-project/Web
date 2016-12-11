@@ -1,0 +1,19 @@
+- provide :title, "議程新增"
+  
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 議程新增
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to '議程', manage_agendas_path
+          li.active 議程新增
+  
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    '議程新增
+    
+  = render 'manage/agendas/form', url: manage_agendas_path, method: :post
