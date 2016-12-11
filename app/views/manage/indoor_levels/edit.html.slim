@@ -1,0 +1,21 @@
+- provide :title, "場地設定"
+
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 場地設定
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Places', manage_indoor_level_path
+          li.active 場地設定
+
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    ' 編輯場地
+    = current_object.name 
+  
+  
+  = render 'manage/indoor_levels/form', url: manage_indoor_level_path(id: current_object.id), method: :put
