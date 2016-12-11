@@ -62,14 +62,14 @@ ActiveRecord::Schema.define(version: 20161211104710) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "speackers", force: :cascade do |t|
+  create_table "speakers", force: :cascade do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.string   "image"
     t.integer  "agenda_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["agenda_id"], name: "index_speackers_on_agenda_id", using: :btree
+    t.index ["agenda_id"], name: "index_speakers_on_agenda_id", using: :btree
   end
 
   create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
@@ -113,5 +113,5 @@ ActiveRecord::Schema.define(version: 20161211104710) do
   add_foreign_key "agendas", "indoor_levels"
   add_foreign_key "events", "places"
   add_foreign_key "indoor_levels", "places"
-  add_foreign_key "speackers", "agendas"
+  add_foreign_key "speakers", "agendas"
 end

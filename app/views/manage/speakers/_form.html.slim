@@ -1,0 +1,20 @@
+= simple_form_for current_object, url: url, method: method do |f|
+  .row
+    .col-sm-12
+      fieldset.form-group
+        = f.label :name, "講者姓名", class: 'form-label semibold'
+        = f.input_field :name, placeholder: '請輸入講者姓名', label: false, required: true, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :description, "講者描述", class: 'form-label semibold'
+        = f.input_field :description, placeholder: '請輸入講者描述', label: false, required: true, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :image, "講者圖片", class: 'form-label semibold'
+        = f.input_field :image, as: :file, placeholder: '請選擇講者圖片', label: false, required: true, class: 'form-control'
+    .col-sm-12
+      fieldset.form-group
+        = f.label :agenda, "所屬議程", class: 'form-label semibold'
+        = f.association :agenda, label: false, required: true, input_html: { class: 'form-control' }, readonly: true, disabled: true
+    
+  = f.button :submit, "儲存", class: 'btn btn-outline-primary'

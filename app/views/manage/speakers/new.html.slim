@@ -1,0 +1,19 @@
+- provide :title, "講者新增"
+
+header.section-header
+  .tbl
+    .tbl-row
+      .tbl-cell
+        h3 講者新增 - #{current_object.agenda&.name}
+        ol.breadcrumb.breadcrumb-simple
+          li
+            = link_to 'BeConnect', '/'
+          li
+            = link_to 'Events', manage_events_path
+          li.active 講者新增
+
+.box-typical.box-typical-padding
+  h4.m-t-lg.with-border
+    '講者新增
+    
+  = render 'manage/speakers/form', url: manage_speaker_path, method: :post
