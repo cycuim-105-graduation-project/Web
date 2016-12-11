@@ -1,7 +1,7 @@
 class Api::EventsController < ::ApplicationController
   def index
     @events = Event.all
-    render json: ActiveModelSerializers::SerializableResource.new(@event).as_json
+    render json: ActiveModelSerializers::SerializableResource.new(@events).as_json
   end
 
   def show
