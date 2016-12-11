@@ -80,7 +80,7 @@ Rails.application.routes.draw do
                 constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/, id: /beacons\/\d{1}!\w{32}\/attachments\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/ }
 
       namespace :attachments, constraints: { beacon_id: /beacons\/\d{1}![a-zA-Z0-9]{32}/ } do
-        resources :announcements, only: %i(new create)
+        resources :announcements, :indoor_levels, only: %i(new create)
       end
     end
 
