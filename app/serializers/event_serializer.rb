@@ -10,4 +10,20 @@ class EventSerializer < ActiveModel::Serializer
   def place
     object.place.name
   end
+
+  def start_at
+    object.start_at.strftime("%Y/%m/%d %H:%M")
+  end
+
+  def end_at
+    object.end_at.strftime("%Y/%m/%d %H:%M")
+  end
+
+  def registration_start_at
+    object.registration_start_at.strftime("%Y/%m/%d %H:%M")
+  end
+
+  def registration_end_at
+    object.registration_end_at.strftime("%Y/%m/%d %H:%M")
+  end
 end
