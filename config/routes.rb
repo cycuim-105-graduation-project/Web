@@ -58,9 +58,7 @@ Rails.application.routes.draw do
         get :agendas
       end
 
-      resources :checkins, only: :create do
-        get :agenda_id, on: :collection
-      end
+      post "checkins/:agenda_id", to: 'checkins#create'
     end
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161211104710) do
+ActiveRecord::Schema.define(version: 20161211141121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20161211104710) do
     t.datetime "updated_at",      null: false
     t.index ["event_id"], name: "index_agendas_on_event_id", using: :btree
     t.index ["indoor_level_id"], name: "index_agendas_on_indoor_level_id", using: :btree
+  end
+
+  create_table "checkins", force: :cascade do |t|
+    t.uuid     "user_id"
+    t.integer  "agenda_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agenda_id"], name: "index_checkins_on_agenda_id", using: :btree
+    t.index ["user_id"], name: "index_checkins_on_user_id", using: :btree
   end
 
   create_table "events", force: :cascade do |t|
@@ -111,6 +120,8 @@ ActiveRecord::Schema.define(version: 20161211104710) do
 
   add_foreign_key "agendas", "events"
   add_foreign_key "agendas", "indoor_levels"
+  add_foreign_key "checkins", "agendas"
+  add_foreign_key "checkins", "users"
   add_foreign_key "events", "places"
   add_foreign_key "indoor_levels", "places"
   add_foreign_key "speakers", "agendas"
