@@ -34,3 +34,6 @@
 /config/application.yml
 /config/settings.yml
 /config/google_credentials.json
+
+# Ignore file upload folder
+/public/uploads/*

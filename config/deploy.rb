@@ -34,6 +34,7 @@ append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/appli
 
 # Default value for linked_dirs is []
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system',
+                     'public/uploads',
                      'vendor/assets/javascripts/material-kit',
                      'vendor/assets/stylesheets/material-kit',
                      'vendor/assets/javascripts/start-ui',
