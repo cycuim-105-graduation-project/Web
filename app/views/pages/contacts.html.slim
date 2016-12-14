@@ -1,0 +1,144 @@
+| <!doctype html
+html lang="en"
+  head
+    meta charset="utf-8" /
+    link href="assets/img/apple-icon.png" rel="apple-touch-icon" sizes="76x76" /
+    link href="assets/img/favicon.png" rel="icon" type="image/png" /
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /
+    title Sections - Material Kit PRO by Creative Tim
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /
+    /! Fonts and icons
+    link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" rel="stylesheet" type="text/css" /
+    link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet" /
+    /! CSS Files
+    link href="assets/css/bootstrap.min.css" rel="stylesheet" /
+    link href="assets/css/material-kit.css" rel="stylesheet" /
+    /! CSS Just for demo purpose, don't include it in your project
+    link href="assets/assets-for-demo/vertical-nav.css" rel="stylesheet" /
+  body.contact-page
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+
+        /! Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle data-target="#navigation-example" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href="../home"  Be connect , Beacon My Friends !
+        #navigation-example.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a href="../activities"
+                i.material-icons apps
+                | 活動總覽
+            li#headerNavigationItems.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                i.material-icons person
+                | 會員管理
+                b.caret
+              ul.dropdown-menu.dropdown-with-icons
+                li
+                  a href="../membership_index.html"
+                    i.material-icons description
+                    | 會員資料修改
+                li
+                  a href="../business_card_own.html"
+                    i.material-icons assignment_ind
+                    | 個人名片
+                li
+                  a href="../business_card_friend.html"
+                    i.material-icons contact_mail
+                    | 名片查詢
+                li
+                  a href="../message_record.html"
+                    i.material-icons insert_comment
+                    | 歷史訊息
+                li
+                  a href="../ticket_inquiring.html"
+                    i.material-icons search
+                    | 票券查詢
+                li
+                  a href="../contacts.html"
+                    i.material-icons phone
+                    | 線上諮詢
+
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                i.material-icons supervisor_account
+                | 大會管理
+                b.caret
+              ul.dropdown-menu.dropdown-with-icons
+                li
+                  a href="../users/sign_in"
+                    i.material-icons wc
+                    | 活動管理
+                li
+                  a href="../users/sign_in"
+                    i.material-icons textsms
+                    | 訊息管理
+            li
+               a.btn.btn-white.btn-simple[href="../about" ]
+                i.material-icons account_balance
+                | 關於我們
+
+
+
+
+.contactus-1.section-image style=("background-image: url('assets/img/examples/city.jpg')")
+  .container
+    .row
+      .col-md-5
+        h2.title 聯絡方式
+        h5.description 如有任何疑問或欲諮詢合作相關問題，請來電洽詢或拜訪，我們將竭誠地歡迎您
+        .info.info-horizontal
+          .icon.icon-primary
+            i.material-icons pin_drop
+          .description
+            h4.info-title 工作室地點
+            p
+              | 320桃園市中壢區中北路200號
+              br/
+              | 資管樓
+              br/
+
+        .info.info-horizontal
+          .icon.icon-primary
+            i.material-icons phone
+          .description
+            h4.info-title 來電洽詢
+            p
+              br/
+              | 03 265 9999
+              br/
+              | Mon - Fri, 8:00-22:00
+      .col-md-5.col-md-offset-2
+        .card.card-contact
+          form#contact-form method="post" role="form"
+            .header.header-raised.header-primary.text-center
+              h4.card-title 聯絡我們
+            .content
+              .row
+                .col-md-6
+                  .form-group.label-floating
+                    label.control-label First name
+                    input.form-control name="name" type="text" /
+                .col-md-6
+                  .form-group.label-floating
+                    label.control-label cell phone number
+                    input.form-control name="name" type="text" /
+              .form-group.label-floating
+                label.control-label Email address
+                input.form-control name="email" type="email" /
+              .form-group.label-floating
+                label.control-label Your message
+                textarea#message.form-control name="message" rows="6"
+              .row
+                .col-md-6
+                  .checkbox
+                    label
+                      input name="optionsCheckboxes" type="checkbox" /
+                      | I'm not a robot
+                .col-md-6
+                  button.btn.btn-primary.pull-right type="submit"  Send Message

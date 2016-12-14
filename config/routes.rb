@@ -49,7 +49,19 @@ Rails.application.routes.draw do
 
   get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'
+  get 'activities', to: 'pages#activities'
+  get 'apply', to: 'pages#apply'
+  get 'membership_index', to: 'pages#membership_index'
+  get 'business_card_own', to: 'pages#business_card_own'
+  get 'business_card_friend', to: 'pages#business_card_friend'
+  get 'business_card_own_edito', to: 'pages#business_card_own_edito'
+  get 'message_record', to: 'pages#message_record'
+  get 'ticket_inquiring', to: 'pages#ticket_inquiring'
+  get 'voting_record', to: 'pages#voting_record'
+  get 'contacts', to: 'pages#contacts'
+
   devise_for :users
+
   namespace :api do
     scope :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'
@@ -61,7 +73,7 @@ Rails.application.routes.draw do
       post "checkins/:agenda_id", to: 'checkins#create'
     end
   end
-
+  
   namespace :manage do
     get :dashboard, controller: :pages
     resources :beacons, only: %i(new index) do
