@@ -33,10 +33,10 @@ section.box-typical
             td = event.quantity
             td
               p
-                = link_to edit_manage_event_path(id: event.id)
+                = link_to edit_manage_event_path(id: event.id), class: 'text-warning' do
                   i.fa.fa-pencil.text-warning
                   span.lbl &nbsp;編輯
               p
-                = link_to manage_event_path(id: event.id), method: :delete do
+                = link_to manage_event_path(id: event.id), method: :delete, class: 'text-danger' do
                   i.fa.fa-trash
                   span.lbl &nbsp;刪除
