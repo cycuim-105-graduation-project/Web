@@ -19,10 +19,10 @@ section.box-typical
             td = indoor.place.name
             td
               p
-                = link_to edit_manage_indoor_level_path(id: indoor.id) do
+                = link_to edit_manage_indoor_level_path(id: indoor.id), class: 'text-warning' do
                   i.fa.fa-pencil.text-warning
                   span.lbl &nbsp;編輯
               p
-                = link_to manage_indoor_level_path(id: indoor.id), method: :delete do
+                = link_to manage_indoor_level_path(id: indoor.id), method: :delete, class: 'text-danger' do
                   i.fa.fa-trash
                   span.lbl &nbsp;刪除

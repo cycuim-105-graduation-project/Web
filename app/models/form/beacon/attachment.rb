@@ -32,6 +32,8 @@ class Form::Beacon::Attachment
       Form::Beacon::Attachment::Questionnaire.new(object)
     when :voting
       Form::Beacon::Attachment::Voting.new(object)
+    when :indoorlevel
+      Form::Beacon::Attachment::IndoorLevel.new(object)
     end
   end
 end

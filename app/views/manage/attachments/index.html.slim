@@ -6,6 +6,10 @@ section.box-typical
     = link_to URI.decode(new_manage_beacon_attachments_announcement_path(beacon_id: params[:beacon_id])), class: 'btn btn-primary' do
       i.fa.fa-plus-circle
       | &nbsp;新增公告
+    | &ensp;
+    = link_to URI.decode(new_manage_beacon_attachments_indoor_level_path(beacon_id: params[:beacon_id])), class: 'btn btn-primary' do
+      i.fa.fa-plus-circle
+      | &nbsp;新增場地綁定
   .table-responsive
     table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons='bootstrapTableIcons' data-detail-view='true' data-detail-formatter='attachmentDetailFormatter'
       thead

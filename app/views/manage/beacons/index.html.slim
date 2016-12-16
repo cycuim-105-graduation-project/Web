@@ -32,7 +32,7 @@ section.box-typical
               p
                 = link_to_modify_status(beacon)
               p
-                = link_to URI.decode(manage_beacon_edit_path(beacon_id: beacon.beacon_name)) do
+                = link_to URI.decode(manage_beacon_edit_path(beacon_id: beacon.beacon_name)), class: 'text-warning' do
                   i.fa.fa-pencil.text-warning
                   span.lbl &nbsp;編輯
               p

@@ -1,0 +1,12 @@
+= simple_form_for @form_indoor_level, url: url, method: method  do |f|
+  .row
+    .col-sm-12
+      fieldset.form-group
+        = f.label :attachment_type, "Attachment 類型", class: 'form-label semibold'
+        = f.input_field :attachment_type, label: false, class: 'form-control', readonly: true
+    .col-sm-12
+      fieldset.form-group
+        = f.label :name, "場地名稱", class: 'form-label semibold' 
+        = f.input_field :name, placeholder: '請輸入場地名稱', label: false, required: true, class: 'form-control'
+
+  = f.button :submit, "儲存", class: 'btn btn-outline-primary'
