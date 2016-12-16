@@ -84,6 +84,8 @@ Rails.application.routes.draw do
 
     resources :places, :events, :indoor_levels, :agendas
 
+    resources :checkins, only: :index
+
     scope 'agendas/:agenda_id' do
       resource :speaker
     end

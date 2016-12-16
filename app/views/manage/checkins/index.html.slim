@@ -1,0 +1,19 @@
+- provide :title, "我的報到記錄"
+
+section.box-typical
+  #toolbar
+    .bootstrap-table-header 我的報導記錄
+  .table-responsive
+    table#table.table.table-striped data-toolbar='#toolbar' data-search='true' data-toggle='table' data-show-refresh='false' data-show-columns='true' data-icons-prefix='fa' data-icons="bootstrapTableIcons" data-detail-view='false'
+      thead
+        th 活動名稱
+        th 議程名稱
+        th 議程時間
+        th 報到時間
+      tbody
+        - current_collection.each do |checkin|
+          tr
+            td = checkin.agenda.event.name
+            td = checkin.agenda.name
+            td = checkin.agenda.start_at.strftime("%Y/%m/%d %H:%M")
+            td = checkin.created_at.strftime("%Y/%m/%d %H:%M")

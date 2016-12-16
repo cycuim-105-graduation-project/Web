@@ -4,6 +4,10 @@ class Api::CheckinsController < ::ApplicationController
 
   def create
     checkin = Agenda.find(params[:agenda_id]).checkins.new(user: current_user)
-    return head :no_content if checkin.save
+    if checkin.save
+      return head :no_content
+    else
+      render json: checkin.errors, status: :unprocessable_entity
+    end
   end
 end
